@@ -1,7 +1,6 @@
 ---
-title: Research Highlights
-feature_text: |
-  A demo of Markdown and HTML includes
+title: Research 
+feature_text: 
 feature_image: "st.jpg"
 excerpt: "A demo of Markdown and HTML includes"
 aside: true
