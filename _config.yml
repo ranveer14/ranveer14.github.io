@@ -67,7 +67,7 @@ collections:
     output: true
     description: "The Easy Way" # The post list page content
    
-    feature_image: "blog.jpg"
+    feature_image: "../blog.jpg"
 
 # 6. Jekyll collections settings
 defaults:
