@@ -1,6 +1,6 @@
 ---
 title: Research 
-feature_image: "st.jpg"
+feature_image: "../st.jpg"
 excerpt: "A demo of Markdown and HTML includes"
 ---
 
