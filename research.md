@@ -2,6 +2,7 @@
 title: Research 
 feature_image: "../st.jpg"
 excerpt: "A demo of Markdown and HTML includes"
+aside: true
 ---
 
 > This is good mathematics.
