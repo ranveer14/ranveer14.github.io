@@ -126,12 +126,8 @@ navigation_header:
   url: /publications/   
 - title: Blog
   url: /blog/
-- title: Categories
-  url: /categories/
 - title: Contact
   url: /search/
-- title: GitHub
-  url: https://github.com/ranveer14
 
 navigation_footer:
 - title: Created by Ranveer Kumar Singh
