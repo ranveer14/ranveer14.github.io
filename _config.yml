@@ -127,7 +127,7 @@ navigation_header:
 - title: Blog
   url: /blog/
 - title: Contact
-  url: /search/
+  url: /contact/
 
 navigation_footer:
 - title: Created by Ranveer Kumar Singh
