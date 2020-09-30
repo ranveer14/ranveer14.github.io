@@ -1,12 +1,9 @@
 ---
 title: Research 
-feature_text: 
 feature_image: "st.jpg"
 excerpt: "A demo of Markdown and HTML includes"
-aside: true
 ---
 
-# NUMBER THEORY
 > This is good mathematics.
 
 
