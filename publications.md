@@ -12,7 +12,7 @@ title: Publications
 
 4. Isomorphism of Skew Harmonic Maass Jacobi Forms and Certain Weak Harmonic Maass Forms. [Link to Preprint](SkewMMF.pdf).  
 5. Bhargava's cube and Black Hole Charges (with Nabamita Banerjee, Ajit Bhand, Suvankar Dutta and Ashoke Sen). [ArXiv:2006.02494](https://arxiv.org/abs/2006.02494).  
-6. Demonstration of a general fault-tolerant quantum error detection code for (2n+1)-qubit entangled state on IBM 16-qubit quantum computer (with Bishvanwesha Panda, Bikash K. Behera, Prasanta K. Panigrahi). [ 	ArXiv:1807.02883](https://arxiv.org/abs/1807.02883). 
+6. Demonstration of a general fault-tolerant quantum error detection code for (2n+1)-qubit entangled state on IBM 16-qubit quantum computer (with Bishvanwesha Panda, Bikash K. Behera, Prasanta K. Panigrahi). [ArXiv:1807.02883](https://arxiv.org/abs/1807.02883). 
  
 #### Journal Articles    
 
