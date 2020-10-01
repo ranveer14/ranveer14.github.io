@@ -1,6 +1,7 @@
 ---
 title: Notes
 layout: page
+excerpt: "Access some notes prepared by Ranveer on this page."
 ---
 Here are some notes which might be useful on a first reading. 
   
