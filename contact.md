@@ -1,6 +1,6 @@
 ---
 title: Contact
-excerpt: "Search for a page or post you're looking for"
+excerpt: "You can contact Ranveer from this page."
 ---
 You can reach me out on my email: ranveersfl@gmail.com. You can also directly message me using the option below.
 {% include site-form.html %}
