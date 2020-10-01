@@ -10,6 +10,7 @@
 # 9. Site navigation
 
 # 1. Files excluded from Jekyll builds
+timezone: Asia/Kolkata
 exclude:
 - README.md
 - CODE_OF_CONDUCT.md
@@ -65,8 +66,6 @@ collections:
   posts:
     title: Posts # Needed for Siteleaf
     output: true
-    description: "The Easy Way" # The post list page content
-   
     feature_image: "../blog.jpg"
 
 # 6. Jekyll collections settings
