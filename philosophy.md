@@ -1,7 +1,8 @@
 ---
 title: Philosophy
 layout: page
-feature image: "../phil.jpg"
+feature_image: "../phil.jpg"
+feature_text: "Ruminations of Reality" 
 ---
-Ruminations of Reality
+
 
