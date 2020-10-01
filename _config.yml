@@ -65,7 +65,7 @@ collections:
   posts:
     title: Posts # Needed for Siteleaf
     output: true
-    feature_image: "../blog1.jpg"
+    feature_image: "../blog2.jpeg"
 
 # 6. Jekyll collections settings
 defaults:
