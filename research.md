@@ -1,7 +1,7 @@
 ---
 title: Research 
 feature_image: "../st.jpg"
-excerpt: "Hi! This is Ranveer's webpage. Navigate the website to know more about me."
+excerpt: "Know more about Ranveer's research on this page."
 aside: false
 ---
 #### Number Theory and Automorphic Forms  
