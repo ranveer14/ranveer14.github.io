@@ -2,7 +2,8 @@
 title: Philosophy
 layout: page
 feature_image: "../phil.jpg"
-feature_text: "Ruminations on Reality" 
+feature_text: "Ruminations on Reality"
+excerpt: "Know Ranveer's philosophy of life on this page."
 ---
 > Three things cannot be long hidden: the sun, the moon, and the truth -- The Buddha.  
   
