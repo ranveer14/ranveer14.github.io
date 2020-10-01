@@ -1,10 +1,11 @@
 {% if site.favicons %}
   {% for icon in site.favicons %}
      <link rel="shortcut icon" href="/assets/logos/logo.png">
+<!Favicon -->
      <link rel="icon" type="image/png" href="/assets/logos/logo.png" sizes="192x192">
      <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/logo.png">
 
   {% endfor %}
 {% endif %}
 
-<link rel="shortcut icon" href="{{ site.avatarurl + '?s=32' | default: "site.logo" }}">
+
