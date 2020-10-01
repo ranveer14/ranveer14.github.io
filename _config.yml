@@ -10,7 +10,6 @@
 # 9. Site navigation
 
 # 1. Files excluded from Jekyll builds
-timezone: Asia/Kolkata
 exclude:
 - README.md
 - CODE_OF_CONDUCT.md
@@ -59,14 +58,14 @@ sass:
   style: compressed # Style compression
 permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
 excerpt_separator: <!-- more --> # Marks end of excerpt in posts
-timezone: Europe/London # Timezone for blog posts and alike
+timezone: Asia/Kolkata # Timezone for blog posts and alike
 
 # 5. Collections
 collections:
   posts:
     title: Posts # Needed for Siteleaf
     output: true
-    feature_image: "../blog.jpg"
+    feature_image: "../blog1.jpg"
 
 # 6. Jekyll collections settings
 defaults:
