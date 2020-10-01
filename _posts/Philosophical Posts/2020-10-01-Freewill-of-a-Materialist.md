@@ -1,7 +1,7 @@
 ---
 title: "Free-will of a Materialist"
 ---
-<center>
+<span>
 The idea of free-will has been an ancient philosophical conundrums posed to mankind. There have been several desperate attemps to settle this question- all without a culmination.    
 Philosophies all across mankind has many fold divergences but the one at forefront is the materialist reductionist approach to life. Most of the scientific community as well as well off members of the society concoct to such a stand. Never has science tried to investigate the subject itself. All the endeavour of
 science has been to reduce the problems to objects of study and then propose an explanation. But what if there is something which cannot be made into an object. Consider the scientist himself as a conscious being. Free-wll is such an issue. The basis of mathematics, which is considered the purest of sciences, is
