@@ -1,7 +1,7 @@
 ---
 title: Ranveer Kumar Singh
 feature_image: "ranveer.jpg"
-excerpt: "Alembic is a starting point for [Jekyll](https://jekyllrb.com/) projects. Rather than starting from scratch, this boilerplate is designed to get the ball rolling immediately. Install it, configure it, tweak it, push it."
+excerpt: "Hi! This is Ranveer's Website. Navigate the page to know more about me."
 ---
 #### About me  
 
