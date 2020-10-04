@@ -1,5 +1,6 @@
 ---
 title: "Perspectives on Freewill"
+layout: "post"
 ---
 > Man can do what he wills but he cannot will what he wills - Arthur Schoepenhaur.  
 What does Schoepenhaur mena when he says "he cannot will what he wills"? This is the realm of philosophy of **freewill verses determinism**. Freewill, as one can comprehend intuitively, means the freedom to make a particular choice out of possible choices, which is not impelled, affected or caused by any physical (external universe), non-physical (environmental conditioning) or metaphysical (mental states and awareness) factors. As one can begin to sense, such a notion of freewill is too stringent. One can argue that most of the, if not all, **_transactional actions or decisions_** - those actions which directly or indirectly renders effect on the society, taken by a person (person here is a techinal term meaning a human being with personhood - possesing moral attributes) is motivated by one or all of the factors mentioned above. To put things in perspective, consider the following thought circumstance.  
