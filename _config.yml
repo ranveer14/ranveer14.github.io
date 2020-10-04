@@ -10,7 +10,6 @@
 # 9. Site navigation
 
 # 1. Files excluded from Jekyll builds
-timezone: Asia/Kolkata
 exclude:
 - README.md
 - CODE_OF_CONDUCT.md
@@ -40,15 +39,13 @@ paginate: 2 # jekyll-paginate > items per page
 paginate_path: blog/page:num # jekyll-paginate > blog page
 jekyll-mentions: https://twitter.com # jekyll-mentions > service used when @replying
 twitter:
-  username: DavidDarnes # jekyll-seo-tag > Owners twitter username
-author: DavidDarnes # jekyll-seo-tag > default author
+  username: Ranveer Kumar Singh # jekyll-seo-tag > Owners twitter username
+author: Ranveer Kumar Singh # jekyll-seo-tag > default author
 social: # jekyll-seo-tag > social overrides
-  name: David Darnes # jekyll-seo-tag > real name
+  name: Ranveer Kumar Singh # jekyll-seo-tag > real name
   links:  # jekyll-seo-tag > social aliases (sameAs)
-    - https://twitter.com/DavidDarnes
-    - https://www.facebook.com/daviddarnes
-    - https://www.linkedin.com/in/daviddarnes
-    - https://github.com/daviddarnes
+    - https://twitter.com/54f07eea7b5e472
+    - https://github.com/ranveer14
 # markdown: CommonMark # Markdown parse settings, CommonMark performs slightly better an others in build time
 # commonmark:
   # options: ["SMART", "FOOTNOTES"]
@@ -59,7 +56,7 @@ sass:
   style: compressed # Style compression
 permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
 excerpt_separator: <!-- more --> # Marks end of excerpt in posts
-timezone: Europe/London # Timezone for blog posts and alike
+timezone: Asia/Kolkata # Timezone for blog posts and alike
 
 # 5. Collections
 collections:
@@ -93,7 +90,7 @@ encoding: utf-8 # Make sure the encoding is right
 lang: en-GB # Set the site language
 title: "Ranveer" # Site name or title, also used in jekyll-seo-tag
 logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
-description: "Alembic is a starting point for Jekyll projects. Rather than starting from scratch, this boilerplate is designed to get the ball rolling immediately" # Site description and default description, also used in jekyll-seo-tag
+description: "Hi! This is Ranveer's Webpage. Navigate to know about me." # Site description and default description, also used in jekyll-seo-tag
 baseurl: ""
 repo: "https://github.com/ranveer14/ranveer14.github.io/"
 email: "ranveersfl@gmail.com"
