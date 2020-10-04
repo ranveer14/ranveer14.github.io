@@ -1,6 +1,5 @@
 ---
 title: "Perspectives on Freewill"
-layout: "post"
 ---
 > Man can do what he wills but he cannot will what he wills - Arthur Schoepenhaur.   
   
