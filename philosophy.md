@@ -40,8 +40,7 @@ Books have been my companions in dark. Sometimes they seem to "close my eyes" in
 1. Something Deeply Hidden by Sean Caroll
 2. The Selfish Gene by Richard Dawkins
 3. Waking Up - A Guide to Spirituality Without Religion by Sam Harris
-4. In Search of Memory by Eric Kandel  
-5. The Selfish Gene by Richard Dawkins   
+4. In Search of Memory by Eric Kandel     
 
 #### Fiction  
 1. Siddhartha by Hermann Hesse
