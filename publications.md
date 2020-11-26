@@ -5,7 +5,7 @@ excerpt: "Know about Ranveer's publications on this page."
 ---
 #### In Preparation    
 
-1.An Analogue of Weil's Converse Theorem for Harmonic Maass Forms, (with Karam Deo Shankhadhar).
+1. An Analogue of Weil's Converse Theorem for Harmonic Maass Forms, (with Karam Deo Shankhadhar).
 2. Mock Modular Forms Associated to Cohen Class Numbers, (with Ajit Bhand).
 3. Zagier's 3/2-weight Mock Modular Form, (with Ajit Bhand). 
 
