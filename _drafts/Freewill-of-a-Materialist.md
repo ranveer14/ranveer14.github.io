@@ -11,3 +11,4 @@ is aware of the individuals choice unless the action in done. Such a strict noti
 that every individual cherishes the birth of a baby in his/her family knowing fully well that in future it is going to cost lakhs towards the proper development of the child. If an individual was really
 a hardcore materialist, he wouldn’t care about anyone else but himself. There are other arguments as well but this post is not to give arguments in favour or against of materialism but to eastablish a logical fallacy in the intuitive nature of freewill and meterialism.
 
+{% include comments.html %}
