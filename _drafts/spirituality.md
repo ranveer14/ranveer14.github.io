@@ -1,5 +1,5 @@
 ---
-title: "Why Spirituality Matters"
+title: "What am I and Why does it matter"
 ---
 > What gets us into trouble is not what we don't know. It's what we know for sure that its just ain't so - Mark Twain. 
 
@@ -23,4 +23,13 @@ This is a very logical experience. For example, when we **see** a bottle, the bo
 
 1. Step one: The external world (physical world outside our body) is _seen_ (experienced) by our _sense organs_ namely eyes, skin, tongue, nose and ear. Since the experiencer is on our side (the sense organs are in our body), thus by the principle of seer and seen, we **cannot be the external world**. This step is easy. We don't need any principles to conclude that we cannot be trees, lakes, moutains, cars, chairs, tables and what not. 
 2. Step two: Our sense organs and more generally our body is **seen** (experienced) by our mind in the sense that our physical body is an object of experience. By the definition of existential identity, we are on mind's side and hence by the principle of seer and seen, we **cannot be our body**. This is somewhat radical. Many people identify themselves with their physical body when they say that _I am fat or I am skinny_, but its just ain't so. But most of the people would agree on this point that we are not the physical body. 
-3. Step three: 
+3. Step three: The mind is seen (experienced) by the **consciousness** (awareness) and hence we are not the minds. 
+
+Third step is quite mind boggling. Most of the people would identify themselves with the mind. So here is an explanation of the thirs step. How is the mind an object of experience. Before we understand this, let us first discuss what is mind. Mind is the collection of all thoughts, memories, feelings, ideas , intellect, reasoning and so on. Thoughts, memories and feelings are gross forms of mental activities. We are immediately **aware** of them whenever they arise (not so easy though!). Bu the fact is we can always spot them when they arise in our minds. But then they are objects of experience. More subtle mental activities are ideas, creativity, intellect and logical reasoning. But notice that whenever you perform any of these mental activity, you are consciously involved in thinking and analysing. But are also aware of these thoughts. Take for example, the mental activity of $2+2=4$ camculation. As soon as you think of this problem, intellect comes into play and analyses the problem. But at any instant you can **watch from background** the activities of the mind while performing these activities. Hence we see that even the subtlest mentasl activities are objects of experience and hence we cannot be our mind. 
+
+Now at this stage people would start thinking, what am I then? Then answer is you cannot **know**. Whatever you know is an object of knowledge and hence cannot be you. Anything is either known or unknwon and you are neither. There is another aspect to this, quite apart from the known and unknown is the **knower** - the awareness. I will keep silent at this point to the question of our identity but we have realised that our identity is not what we are used to thinking about. I am silent to the question because it cannot be expressed in words. Language has the limitation of only expressing what is known to us and unknown things we cannot express anyway. The quest is then to realise our tru nature. This also immediately gives rise to two particularly important questions that could define the way we look at life. I will close the discussion with those questions and some conclusion at the end.
+
+1. What is death? Do we really die after death?
+2. Is there life after death? If yes then in what form?
+
+In conclusion, we have to realise our real nature which could also lead to the discovery of answer of the above questions. The above questions make sense because what we know about death is that the body and mind of an individual ceases to exist after death. But if we are not our body and mind then how can we conclude that we (as our real self) cease to exist after death. Moreover if we don't know the answer to this question, then we don't know if there is life in some form after death. These are the most important questions of humanity. I hope you realise what you are soon and get the answers to your questions soon.
