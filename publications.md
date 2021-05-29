@@ -4,7 +4,7 @@ title: Publications
 excerpt: "Know about Ranveer's publications on this page."
 ---
 #### In Preparation    
-
+1. Weil's Converse Theorem for Quasimodular Forms, (with Mrityunjoy Charan, Jaban Meher and Karam Deo Shankhadhar).
 2. Mock Modular Forms Associated to Cohen Class Numbers, (with Ajit Bhand). 
 
 #### Preprint
