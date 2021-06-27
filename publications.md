@@ -5,7 +5,6 @@ excerpt: "Know about Ranveer's publications on this page."
 ---
 #### In Preparation    
 1. Weil's Converse Theorem for Quasimodular Forms, (with Mrityunjoy Charan, Jaban Meher and Karam Deo Shankhadhar).
-2. Mock Modular Forms Associated to Cohen Class Numbers, (with Ajit Bhand). 
 
 #### Preprint
 1. An Analogue of Weil's Converse Theorem for Harmonic Maass Forms of Polynomial Growth, (with Karam Deo Shankhadhar), [ArXiv:2101.03101](https://arxiv.org/abs/2101.03101){:target="_blank"}.
