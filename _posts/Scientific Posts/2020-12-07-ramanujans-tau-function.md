@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ramanujan's Tau Function, Lehmer's Conjecture and Mock Modular Forms"
-Categories: Scientific Posts
+categories: Scientific Posts
 ---
 I thought I would kickstart my first mathematical post with my favourite mathematical object - the Ramanujan's tau function. The mathematical legacy of the Indian mathematics genius Srinivasa Ramanujan opened up several broad areas in twentieth century mathematics and is still shaping the mathematical developments of the twenty first century. In this post, we will see two of his works and their relation - the tau function and mock modular forms. This post is intended for anyone with a basic background in real and complex analysis.  
 #### Introduction
