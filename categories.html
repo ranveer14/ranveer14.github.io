@@ -1,25 +1,31 @@
 ---
-layout: page
+layout: default
 permalink: /categories/
 title: Categories
 ---
 
-<div id="archives">
 {% for category in site.categories %}
-  <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <p></p>
-
-    <h3 class="category-head">{{ category_name }}</h3>
-    <a name="{{ category_name | slugize }}"></a>
-    {% for post in site.categories[category_name] %}
-    <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-      {% include post-meta.html %}
-    {{ page.excerpt | truncatewords: 60 | markdownify }}
-    </article>
-    {% endfor %}
-  </div>
+  {% assign category_name = category | first %}
+  <section class="section  typeset">
+    <h2 id="{{ category_name | slugify }}">{{ category_name }}</h2>
+    <ul class="list  list--posts">
+      {% for page in site.categories[category_name] %}
+        {% assign has_categories = true %}
+        <li class="item  item--post">
+          <article class="article  article--post  typeset">
+            <h3><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h3>
+            {% include post-meta.html %}
+            {{ page.excerpt | truncatewords: 60 | markdownify }}
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+    {% unless forloop.last %}<hr/>{% endunless %}
+  </section>
 {% endfor %}
-</div>
+
+{% if has_categories != true %}
+  <section class="section  typeset">
+    <p>There are no categorised posts</p>
+  </section>
+{% endif %}
