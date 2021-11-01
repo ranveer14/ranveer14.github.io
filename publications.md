@@ -3,10 +3,9 @@ layout: "page"
 title: Publications
 excerpt: "Know about Ranveer's publications on this page."
 ---
-#### In Preparation    
-1. Asymptotic Symmetry Algebra of Einsein-Yang-Mills Theory, (with Nabamita Banerjee and Tabasum Rahnuma) 
 
 #### Preprint
+1. Asymptotic Symmetry of Four Dimensional Einstein-Yang-Mills and Einstein-Maxwell Theory, (with Nabamita Banerjee and Tabasum Rahnuma) , [ArXiv:2110.15657](https://arxiv.org/abs/2110.15657){:target="_blank"}.
 1. A Converse Theorem for Quasimodular forms, (with Mrityunjoy Charan, Jaban Meher and Karam Deo Shankhadhar).
 1. An Analogue of Weil's Converse Theorem for Harmonic Maass Forms of Polynomial Growth, (with Karam Deo Shankhadhar), [ArXiv:2101.03101](https://arxiv.org/abs/2101.03101){:target="_blank"}.
 1. Zagier's weight 3/2 Mock Modular Form, (with Ajit Bhand), [ArXiv:2012.00539](https://arxiv.org/abs/2012.00539){:target="_blank"}.
