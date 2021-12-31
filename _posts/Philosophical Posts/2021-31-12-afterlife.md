@@ -1,4 +1,10 @@
-Why is afterlife the most important question in life?
+---
+layout: post
+title: "Why is afterlife the most important question in life?"
+categories: Philosophy
+---
+>
+
 The title might render the post a religious, dogmatic and pseudoscientific post, but believe me, I promise to change your mind (assuming there is freewill!) by the end of the post. So hold on and think with me! The question that I will ponder on today is related to the possibilities after death. What happens after death. In the first part of the post, I will argue that 
 
 You cannot logically prove that a living person ceases to exist after death.
