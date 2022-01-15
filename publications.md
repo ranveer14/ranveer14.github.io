@@ -7,7 +7,7 @@ excerpt: "Know about Ranveer's publications on this page."
 #### Preprint
 1. An Analogue of Weil's Converse Theorem for Harmonic Maass Forms of Polynomial Growth, (with Karam Deo Shankhadhar), [ArXiv:2101.03101](https://arxiv.org/abs/2101.03101){:target="_blank"}.
 1. Zagier's weight 3/2 Mock Modular Form, (with Ajit Bhand), [ArXiv:2012.00539](https://arxiv.org/abs/2012.00539){:target="_blank"}.
-4. Mock Eisenstein Series, [ArXiv:2011.07796](https://arxiv.org/abs/2011.07796){:target="_blank"}.
+4. Maass lifts of half-integral weight Eisenstein series and theta powers, (with Ajit Bhand and Karam Deo Shankhadhar) [ArXiv:2011.07796](https://arxiv.org/abs/2011.07796){:target="_blank"}.
 5. Isomorphism of Skew Harmonic Maass Jacobi Forms and Certain Weak Harmonic Maass Forms, [ArXiv:2011.07540](https://arxiv.org/abs/2011.07540){:target="_blank"}.   
 6. Demonstration of a general fault-tolerant quantum error detection code for (2n+1)-qubit entangled state on IBM 16-qubit quantum computer (with Bishvanwesha Panda, Bikash K. Behera, Prasanta K. Panigrahi), [ArXiv:1807.02883](https://arxiv.org/abs/1807.02883){:target="_blank"}. 
  
