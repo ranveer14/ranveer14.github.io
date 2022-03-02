@@ -12,7 +12,7 @@ excerpt: "Know about Ranveer's publications on this page."
  
 #### Journal Articles 
 1. An Analogue of Weil's Converse Theorem for Harmonic Maass Forms of Polynomial Growth, (with Karam Deo Shankhadhar), [ArXiv:2101.03101](https://arxiv.org/abs/2101.03101){:target="_blank"}, Accepted for publication in **Research in Number Theory**
-1. A Converse Theorem for Quasimodular forms, (with Mrityunjoy Charan, Jaban Meher and Karam Deo Shankhadhar), Accepted for publication in **Forum Mathematicum**.
+1. A Converse Theorem for Quasimodular forms, (with Mrityunjoy Charan, Jaban Meher and Karam Deo Shankhadhar), **Forum Mathematicum**, DOI: [10.1515/forum-2021-0241](https://doi.org/10.1515/forum-2021-0241)
 1. Asymptotic Symmetry of Four Dimensional Einstein-Yang-Mills and Einstein-Maxwell Theory, (with Nabamita Banerjee and Tabasum Rahnuma) , [ArXiv:2110.15657](https://arxiv.org/abs/2110.15657){:target="_blank"}, **Journal of High Energy Physics**, 33 (2022), DOI: [10.1007/JHEP01(2022)033](https://doi.org/10.1007/JHEP01(2022)033){:target="_blank"}.
 7. Bhargava's cube and Black Hole Charges (with Nabamita Banerjee, Ajit Bhand, Suvankar Dutta and Ashoke Sen), [ArXiv:2006.02494](https://arxiv.org/abs/2006.02494){:target="_blank"}, **Research in the Mathematical Sciences**, 8, 3 (2021), DOI: [10.1007/s40687-020-00237-0](https://link.springer.com/article/10.1007/s40687-020-00237-0){:target="_blank"}.   
 8. On the classical dynamics of charged particle in special class of spatially non-uniform magnetic field, **Indian Journal of Physics**, volume 93, pages 503–509(2019) [ArXiv:1807.05216](https://arxiv.org/abs/1807.05216){:target="_blank"}, DOI: [10.1007/s12648-018-1316-z](https://link.springer.com/article/10.1007/s12648-018-1316-z){:target="_blank"}.  
