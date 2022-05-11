@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Why is afterlife the most important question in life?"
-categories: Philosophy
 ---
 > I died as a mineral and became a plant, I died as a plant and rose to animal, I died as animal and I was man. Why should I fear? When was I less by dying? -- Jalaluddin Rumi.
 
