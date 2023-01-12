@@ -5,7 +5,7 @@ excerpt: "Know about Ranveer's publications on this page."
 ---
 
 #### Preprint
-1. Asymptotic Symmetry algebra of $\mathcal{N}=8$ Supergravity, (with Nabamita Banerjee and Tabasum Rahnuma) , [ArXiv:2212.12133](https://arxiv.org/abs/2212.12133){:target="_blank"}.
+1. Asymptotic Symmetry algebra of $\mathcal{N}=8$ Supergravity, (with Nabamita Banerjee and Tabasum Rahnuma), [ArXiv:2212.12133](https://arxiv.org/abs/2212.12133){:target="_blank"}.
 2. Soft and Collinear Limits in $\mathcal{N}=8$ Supergravity using Double Copy Formalism, (with Nabamita Banerjee and Tabasum Rahnuma) , [ArXiv:2212.11480](https://arxiv.org/abs/2212.11480){:target="_blank"}.  
 #### Journal Articles
 1. Maass lifts of half-integral weight Eisenstein series and theta powers, (with Ajit Bhand and Karam Deo Shankhadhar) [ArXiv:2011.07796](https://arxiv.org/abs/2011.07796){:target="_blank"}, **To Appear in Pacific Journal of Mathematics**.
