@@ -5,10 +5,11 @@ excerpt: "Know about Ranveer's publications on this page."
 ---
 
 #### Preprint
-4. Maass lifts of half-integral weight Eisenstein series and theta powers, (with Ajit Bhand and Karam Deo Shankhadhar) [ArXiv:2011.07796](https://arxiv.org/abs/2011.07796){:target="_blank"}.
- 
+1. Asymptotic Symmetry algebra of $\mathcal{N}=8$ Supergravity, (with Nabamita Banerjee and Tabasum Rahnuma) , [ArXiv:2212.12133](https://arxiv.org/abs/2212.12133){:target="_blank"}.
+2. Soft and Collinear Limits in $\mathcal{N}=8$ Supergravity using Double Copy Formalism, (with Nabamita Banerjee and Tabasum Rahnuma) , [ArXiv:2212.11480](https://arxiv.org/abs/2212.11480){:target="_blank"}.  
 #### Journal Articles
-1. Demonstration of a general fault-tolerant quantum error detection code for (2n+1)-qubit entangled state on IBM 16-qubit quantum computer (with Bishvanwesha Panda, Bikash K. Behera, Prasanta K. Panigrahi), [ArXiv:1807.02883](https://arxiv.org/abs/1807.02883){:target="_blank"}, **IET Quantum Communications**, DOI: [https://doi.org/10.1049/qtc2.12043](https://doi.org/10.1049/qtc2.12043).
+1. Maass lifts of half-integral weight Eisenstein series and theta powers, (with Ajit Bhand and Karam Deo Shankhadhar) [ArXiv:2011.07796](https://arxiv.org/abs/2011.07796){:target="_blank"}, **To Appear in Pacific Journal of Mathematics**.
+1. Demonstration of a general fault-tolerant quantum error detection code for (2n+1)-qubit entangled state on IBM 16-qubit quantum computer (with Bishvanwesha Panda, Bikash K. Behera, Prasanta K. Panigrahi), [ArXiv:1807.02883](https://arxiv.org/abs/1807.02883){:target="_blank"}, **IET Quantum Communications**, DOI: [https://doi.org/10.1049/qtc2.12043](https://doi.org/10.1049/qtc2.12043){:target="_blank"}.
 1. An Analogue of Weil's Converse Theorem for Harmonic Maass Forms of Polynomial Growth, (with Karam Deo Shankhadhar), [ArXiv:2101.03101](https://arxiv.org/abs/2101.03101){:target="_blank"}, **Research in Number Theory**, DOI: [s40993-022-00334-9](https://link.springer.com/article/10.1007/s40993-022-00334-9){:target="_blank"}
 1. A Converse Theorem for Quasimodular forms, (with Mrityunjoy Charan, Jaban Meher and Karam Deo Shankhadhar), **Forum Mathematicum**, DOI: [10.1515/forum-2021-0241](https://doi.org/10.1515/forum-2021-0241){:target="_blank"}
 1. Asymptotic Symmetry of Four Dimensional Einstein-Yang-Mills and Einstein-Maxwell Theory, (with Nabamita Banerjee and Tabasum Rahnuma) , [ArXiv:2110.15657](https://arxiv.org/abs/2110.15657){:target="_blank"}, **Journal of High Energy Physics**, 33 (2022), DOI: [10.1007/JHEP01(2022)033](https://doi.org/10.1007/JHEP01(2022)033){:target="_blank"}.
