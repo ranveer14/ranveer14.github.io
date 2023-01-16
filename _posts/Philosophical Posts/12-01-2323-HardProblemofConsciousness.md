@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Hard Problem Of Consciousness And Nonduality"
+categries: Philosophy
 ---
 > Christ, Buddha, and Krishna are but waves in the Ocean of Infinite Consciousness that I am! -- Swami Vivekananda.
 
