@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "The Hard Problem Of Consciousness And Nonduality"
-categries: Philosophy
+categories: Philosophy
 ---
-> Christ, Buddha, and Krishna are but waves in the Ocean of Infinite Consciousness that I am! -- Swami Vivekananda.
+> Christ, Buddha, and Krishna are but waves in the Ocean of Infinite Consciousness that I am! - Swami Vivekananda.
 
 Today (12 January) is the birth anniversary of the great Indian monk Swami Vivekananda. This post is a little bit about the teachings of Swami Vivekananda. The topic of today’s discussion is at the intersection of philosophy of mind, neuroscience and computer science. I want to talk about the definition of consciousness and explain a conundrum called **the hard problem of consciousness**. This is a central problem in the study of philosophy of mind and neuroscience. As a general question as well, it is interesting and worth pondering about. In the first part, I will try to explain the definition of consciousness according to Swami Vivekananda, then I will explain the philosophical problem. Finally I will try to resolve the hard problem of consciousness and make sense of the quote above. I should mention that the description in this post is based on a school of Indian philosophy called **Advait Vedant** which translates to **Nondual Vedanta**. Some of the arguments below are directly taken from the talks of a popular Vedantic teacher Swami Sarvapriyananda. I will talk more about Advait Vedanta in some other post. 
 
