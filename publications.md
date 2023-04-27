@@ -5,9 +5,11 @@ excerpt: "Know about Ranveer's publications on this page."
 ---
 
 #### Preprint
-1. Asymptotic Symmetry algebra of N=8 Supergravity, (with Nabamita Banerjee and Tabasum Rahnuma), [ArXiv:2212.12133](https://arxiv.org/abs/2212.12133){:target="_blank"}.  
+1. Asymptotic Symmetry algebra of N=8 Supergravity, (with Nabamita Banerjee and Tabasum Rahnuma), [ArXiv:2212.12133](https://arxiv.org/abs/2212.12133){:target="_blank"}. 
+ 
 #### Journal Articles
-2. Soft and Collinear Limits in N=8 Supergravity using Double Copy Formalism, (with Nabamita Banerjee and Tabasum Rahnuma), [ArXiv:2212.11480](https://arxiv.org/abs/2212.11480){:target="_blank"}, **Journal of High Energy Physics**, 33 (2022), DOI: [10.1007/JHEP04(2023)126](https://doi.org/10.1007/JHEP04(2023)126){:target="_blank"}.
+
+2. Soft and Collinear Limits in N=8 Supergravity using Double Copy Formalism, (with Nabamita Banerjee and Tabasum Rahnuma), [ArXiv:2212.11480](https://arxiv.org/abs/2212.11480){:target="_blank"}, **Journal of High Energy Physics**, 126, (2023), DOI: [10.1007/JHEP04(2023)126](https://doi.org/10.1007/JHEP04(2023)126){:target="_blank"}.
 1. Maass lifts of half-integral weight Eisenstein series and theta powers, (with Ajit Bhand and Karam Deo Shankhadhar) [ArXiv:2011.07796](https://arxiv.org/abs/2011.07796){:target="_blank"}, **Pacific Journal of Mathematics**,
 DOI: [10.2140/pjm.2022.321.1](https://msp.org/pjm/2022/321-1/p01.xhtml){:target="_blank"}.
 1. Demonstration of a general fault-tolerant quantum error detection code for (2n+1)-qubit entangled state on IBM 16-qubit quantum computer (with Bishvanwesha Panda, Bikash K. Behera, Prasanta K. Panigrahi), [ArXiv:1807.02883](https://arxiv.org/abs/1807.02883){:target="_blank"}, **IET Quantum Communications**, DOI: [https://doi.org/10.1049/qtc2.12043](https://doi.org/10.1049/qtc2.12043){:target="_blank"}.
@@ -17,7 +19,9 @@ DOI: [10.2140/pjm.2022.321.1](https://msp.org/pjm/2022/321-1/p01.xhtml){:target=
 7. Bhargava's cube and Black Hole Charges (with Nabamita Banerjee, Ajit Bhand, Suvankar Dutta and Ashoke Sen), [ArXiv:2006.02494](https://arxiv.org/abs/2006.02494){:target="_blank"}, **Research in the Mathematical Sciences**, 8, 3 (2021), DOI: [10.1007/s40687-020-00237-0](https://link.springer.com/article/10.1007/s40687-020-00237-0){:target="_blank"}.   
 8. On the classical dynamics of charged particle in special class of spatially non-uniform magnetic field, **Indian Journal of Physics**, volume 93, pages 503–509(2019) [ArXiv:1807.05216](https://arxiv.org/abs/1807.05216){:target="_blank"}, DOI: [10.1007/s12648-018-1316-z](https://link.springer.com/article/10.1007/s12648-018-1316-z){:target="_blank"}.  
 9. Getting Started With Quantum Computation: Experiencing The Quantum Experience (with Prathamesh Ratnaparkhi, Bikash K. Behera, and Prasanta K. Panigrahi), **Student Journal of Physics**, Vol. 7, No. 4, Oct-Dec.2018, [Link](https://www.iopb.res.in/~sjp/74final/3.pdf){:target="_blank"}.
+
 #### Other Preprints
+
 1. Zagier's weight 3/2 Mock Modular Form, (with Ajit Bhand), [ArXiv:2012.00539](https://arxiv.org/abs/2012.00539){:target="_blank"}.
 5. Isomorphism of Skew Harmonic Maass Jacobi Forms and Certain Weak Harmonic Maass Forms, [ArXiv:2011.07540](https://arxiv.org/abs/2011.07540){:target="_blank"}.    
   
