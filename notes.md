@@ -3,7 +3,7 @@ title: Notes
 layout: page
 excerpt: "Access some notes prepared by Ranveer on this page."
 ---
-Here are some useful notes. Any typos/corrections is greatly appreciated. Please send them to ranveersfl@gmail.com.  
+Here are some notes which might be useful. Any typos/corrections is greatly appreciated. Please send them to ranveersfl@gmail.com.  
   
 1. [Introduction to String Theory](String_Theory_notes.pdf){:target="_blank"}   
 2. [Ideal Class Group](class-group.pdf){:target="_blank"}    
