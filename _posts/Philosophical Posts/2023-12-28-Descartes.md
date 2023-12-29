@@ -69,7 +69,7 @@ The next step is to define levels of reality. There are two of them that Descart
 | ------|----------------|------------------ |
 | Idea of a cat | Minimum | Medium           |
 | Moon |  Medium | NA                        | 
-| Color | Green |  Minimum| NA |
+| Color Green |  Minimum| NA |
 | Idea of sweet taste | Minimum | Minimum|
 | God|  Maximum| NA|
 | Idea of God|  Minimum| Maximum|
