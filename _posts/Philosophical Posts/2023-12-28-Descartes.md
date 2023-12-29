@@ -27,7 +27,7 @@ After discarding all statements about the existence of external objects, Descart
 
 **Theorem 2.** _"I exist" is a certainly true statement_.
 
-_Proof_. The statement "I exist" cannot be doubted. Indeed, even to doubt this statement, I must exist first and then only can I doubt this statement. $\square$ 
+_Proof_. The statement "I exist" cannot be doubted. Indeed, even to doubt this statement, I must exist first and then only can I doubt this statement. $\blacksquare$ 
 
 Note that Descartes is not telling us that we exist as bodies or minds. All he is claiming is that we are some sort of "thinking things" behind the veil of ideas and perception. By "veil", Descartes means that if there is anything other than a thinking mind that exists, there is no way of knowing its existence, that is there is a veil between a thinking mind and anything else, if it exists, distinct from the mind.
 
@@ -73,6 +73,7 @@ The next step is to define levels of reality. There are two of them that Descart
 | Idea of sweet taste | Minimum | Minimum|
 | God|  Maximum| NA|
 | Idea of God|  Minimum| Maximum|
+
     
 We are now ready to prove the existence of God. Before we proceed, we need the following axioms/assumptions/premises that Descartes puts forward:
 1. Everything has a cause.
@@ -83,7 +84,7 @@ The first two assumptions seem intuitive. We live in a universe which follows ca
 
 **Main Theorem 3.** _God exists_. 
 
-_Proof_. We begin by observing that the idea of God exists in our mind. Thus it must have a cause. Moreover, the objective reality of idea of God is maximum and hence the cause of the idea of God must have maximum formal reality. Thus there must exist something with maximal level of formal reality. Since the level of formal reality of the mind is medium, there must exist something other than the mind with maximal level of formal reality. Since God is the only thing with maximal formal reality, God exists. $\square$
+_Proof_. We begin by observing that the idea of God exists in our mind. Thus it must have a cause. Moreover, the objective reality of idea of God is maximum and hence the cause of the idea of God must have maximum formal reality. Thus there must exist something with maximal level of formal reality. Since the level of formal reality of the mind is medium, there must exist something other than the mind with maximal level of formal reality. Since God is the only thing with maximal formal reality, God exists. $\blacksquare$
 
 Note that when Descartes concludes that there must exist a thing distinct from mind with maximal level of formal reality, he has already broken through the veil of ideas and perceptions. So now Descartes concludes that atleast two statements are certainly true: I exist and God exists. In his 6 part series called "Meditations", Descartes then proves the existence of all physical universe and experiences. 
 
