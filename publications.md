@@ -5,7 +5,7 @@ excerpt: "Know about Ranveer's publications on this page."
 ---
 
 #### Preprint
-1. Non-Chiral Vertex Operator Algebra Associated To Lorentzian Lattices And Narain CFTs, (with Madhav Sinha), [arXiv:2312.16296](https://arxiv.org/abs/2312.16296){:target="_blank"}.
+1. Non-Chiral Vertex Operator Algebra Associated To Lorentzian Lattices And Narain CFTs, (with Madhav Sinha), [ArXiv:2312.16296](https://arxiv.org/abs/2312.16296){:target="_blank"}.
 1. Mock Modularity In CHL Models, (with Ajit Bhand and Ashoke Sen), [ArXiv:2311.16252](https://arxiv.org/abs/2311.16252){:target="_blank"}.
 1. Beauty And The Beast Part 2: Apprehending The Missing Supercurrent, (with Gregory Moore), [ArXiv:2309.02382](https://arxiv.org/abs/2309.02382){:target="_blank"}.
 1. Asymptotic Symmetry algebra of N=8 Supergravity, (with Nabamita Banerjee and Tabasum Rahnuma), [ArXiv:2212.12133](https://arxiv.org/abs/2212.12133){:target="_blank"}. 
