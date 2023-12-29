@@ -64,8 +64,6 @@ The next step is to define levels of reality. There are two of them that Descart
 **Remark 6.** Note that only ideas have any degree of objective reality since only ideas have objects. This also means that ideas always have minimum level of formal reality since ideas are always modes of substances.  
 
 **Example 6.** The idea of color green has level minimum level of of formal reality and minimum level of objective reality since the object of the idea is the color green which is a mode. We give several examples in the form of a table. The reasoning is left as an exercise for the reader.
-
-<center>
     
 | Thing | Formal reality | Objective reality |
 |------|:----------------:|:------------------:|
@@ -75,8 +73,6 @@ The next step is to define levels of reality. There are two of them that Descart
 | Idea of sweet taste | Minimum | Minimum|
 | God|  Maximum| NA|
 | Idea of God|  Minimum| Maximum|
-
-</center>
 
 We are now ready to prove the existence of God. Before we proceed, we need the following axioms/assumptions/premises that Descartes puts forward:
 1. Everything has a cause.
