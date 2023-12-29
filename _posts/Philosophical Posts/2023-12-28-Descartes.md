@@ -64,7 +64,6 @@ The next step is to define levels of reality. There are two of them that Descart
 **Remark 6.** Note that only ideas have any degree of objective reality since only ideas have objects. This also means that ideas always have minimum level of formal reality since ideas are always modes of substances.  
 
 **Example 6.** The idea of color green has level minimum level of of formal reality and minimum level of objective reality since the object of the idea is the color green which is a mode. We give several examples in the form of a table. The reasoning is left as an exercise for the reader.
-    
 | Thing | Formal reality | Objective reality |
 |------|:----------------:|:------------------:|
 | Idea of a cat | Minimum | Medium           |
