@@ -3,7 +3,7 @@ layout: post
 title: "Descartes’ Cosmological Proof for the Existence of God"
 categories: Philosophy
 ---
-> Cogito ergo sum (I think therefore I am) - Ren\'{e} Descartes.
+> Cogito ergo sum (I think therefore I am) - René Descartes.
 
 In this post, I will explain Descartes' cosmological proof of the existence of God, albeit with a twist. Since Descartes was a mathematician, I will present his proof in a mathematical style. There are obviously several flaws in the proof. Finding a flaw in the argument is left as an exercise for the reader. Before we can begin understanding Descartes' proof of the the existence of God, we need to recall a few definitions and examples. 
 
@@ -65,16 +65,15 @@ The next step is to define levels of reality. There are two of them that Descart
 
 **Example 6.** The idea of color green has level minimum level of of formal reality and minimum level of objective reality since the object of the idea is the color green which is a mode. We give several examples in the form of a table. The reasoning is left as an exercise for the reader.
 
-        | Thing | Formal reality | Objective reality |
-        | ------|----------------|------------------ |
-        | Idea of a cat | Minimum | Medium           |
-        | Moon |  Medium | NA                        | 
-        | Color | Green |  Minimum| NA |
-        | Idea of sweet taste | Minimum | Minimum|
-        | God|  Maximum| NA|
-        | Idea of God|  Minimum| Maximum|
+| Thing | Formal reality | Objective reality |
+| ------|----------------|------------------ |
+| Idea of a cat | Minimum | Medium           |
+| Moon |  Medium | NA                        | 
+| Color | Green |  Minimum| NA |
+| Idea of sweet taste | Minimum | Minimum|
+| God|  Maximum| NA|
+| Idea of God|  Minimum| Maximum|
     
-
 We are now ready to prove the existence of God. Before we proceed, we need the following axioms/assumptions/premises that Descartes puts forward:
 1. Everything has a cause.
 2. Level of reality of the cause $\geq$ level of reality of effect.
