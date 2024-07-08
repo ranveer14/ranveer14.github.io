@@ -117,10 +117,10 @@ navigation_header:
   url: /publications/ 
 - title: Notes
   url: /notes/
-- title: Philosophy
-  url: /philosophy/         
-- title: Blog
-  url: /blog/
+#- title: Philosophy
+# url: /philosophy/         
+#- title: Blog
+#  url: /blog/
 - title: Contact
    url: /contact/
 
