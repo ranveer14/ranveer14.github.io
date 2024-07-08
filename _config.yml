@@ -117,12 +117,12 @@ navigation_header:
   url: /publications/ 
 - title: Notes
   url: /notes/
-- title: Philosophy
-  url: /philosophy/         
-- title: Blog
-  url: /blog/
-- title: Contact
-  url: /contact/
+#- title: Philosophy
+#  url: /philosophy/         
+#- title: Blog
+#  url: /blog/
+#- title: Contact
+# url: /contact/
 
 navigation_footer:
 - title: Created by Ranveer Kumar Singh
