@@ -9,7 +9,7 @@ excerpt: "Hi! This is Ranveer's Website. Navigate the page to know more about me
 * I completed BSMS integrated masters course majoring in mathematics and with a minor in physics from [IISER Bhopal](https://www.iiserb.ac.in){:target="_blank"}, India. My master's research in mathematics was under the supervision of [Dr. Ajit Bhand](https://home.iiserb.ac.in/~abhand/){:target="_blank"}. My Thesis was aimed at investigating the connections of modular forms, class groups and mock modular forms, with black hole microstates counting problem in string theory. Here is my [Master's Thesis](MS_Thesis.pdf){:target="_blank"}. 
 
 #### Contact
-You can reach to me via email: ranveersfl@gmail.com
+Email: ranveersfl@gmail.com, rks158@physics.rutgers.edu.
 
 
 
