@@ -5,6 +5,7 @@ excerpt: "Know about Ranveer's publications on this page."
 ---
 
 #### Preprint
+1. Rationality of Lorentzian Lattice CFTs And The Associated Modular Tensor Category, (with Madhav Sinhha and Runkai Tao), [ArXiv:2408.02744](https://arxiv.org/abs/2408.02744){:target="_blank"}.
 1. Algebraic Structures In Closed Superstring Field Theory, Homotopy Transfer And Effective Actions, [ArXiv:2405.08063](https://arxiv.org/abs/2405.08063){:target="_blank"}.
 1. Non-Chiral Vertex Operator Algebra Associated To Lorentzian Lattices And Narain CFTs, (with Madhav Sinha), [ArXiv:2312.16296](https://arxiv.org/abs/2312.16296){:target="_blank"}.
 1. Mock Modularity In CHL Models, (with Ajit Bhand and Ashoke Sen), [ArXiv:2311.16252](https://arxiv.org/abs/2311.16252){:target="_blank"}.
