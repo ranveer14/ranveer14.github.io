@@ -7,12 +7,12 @@ excerpt: "Know about Ranveer's publications on this page."
 #### Preprint
 1. Rationality of Lorentzian Lattice CFTs And The Associated Modular Tensor Category, (with Madhav Sinha and Runkai Tao), [ArXiv:2408.02744](https://arxiv.org/abs/2408.02744){:target="_blank"}.
 1. Algebraic Structures In Closed Superstring Field Theory, Homotopy Transfer And Effective Actions, [ArXiv:2405.08063](https://arxiv.org/abs/2405.08063){:target="_blank"}.
-1. Non-Chiral Vertex Operator Algebra Associated To Lorentzian Lattices And Narain CFTs, (with Madhav Sinha), [ArXiv:2312.16296](https://arxiv.org/abs/2312.16296){:target="_blank"}.
 1. Mock Modularity In CHL Models, (with Ajit Bhand and Ashoke Sen), [ArXiv:2311.16252](https://arxiv.org/abs/2311.16252){:target="_blank"}.
 1. Beauty And The Beast Part 2: Apprehending The Missing Supercurrent, (with Gregory Moore), [ArXiv:2309.02382](https://arxiv.org/abs/2309.02382){:target="_blank"}.
  
 #### Journal Articles
 
+1. Non-Chiral Vertex Operator Algebra Associated To Lorentzian Lattices And Narain CFTs, (with Madhav Sinha), [ArXiv:2312.16296](https://arxiv.org/abs/2312.16296){:target="_blank"}, **SciPost Physics**, 17, 047, (2024), DOI: [https://scipost.org/SciPostPhys.17.2.047](https://scipost.org/SciPostPhys.17.2.047){:target="_blank"}.
 1. Asymptotic Symmetry algebra of N=8 Supergravity, (with Nabamita Banerjee and Tabasum Rahnuma), [ArXiv:2212.12133](https://arxiv.org/abs/2212.12133){:target="_blank"}, **Physical Review D**, 109, (2024), DOI: [https://doi.org/10.1103/PhysRevD.109.046010](https://doi.org/10.1103/PhysRevD.109.046010){:target="_blank"}. 
 2. Soft and Collinear Limits in N=8 Supergravity using Double Copy Formalism, (with Nabamita Banerjee and Tabasum Rahnuma), [ArXiv:2212.11480](https://arxiv.org/abs/2212.11480){:target="_blank"}, **Journal of High Energy Physics**, 126, (2023), DOI: [10.1007/JHEP04(2023)126](https://doi.org/10.1007/JHEP04(2023)126){:target="_blank"}.
 1. Maass lifts of half-integral weight Eisenstein series and theta powers, (with Ajit Bhand and Karam Deo Shankhadhar) [ArXiv:2011.07796](https://arxiv.org/abs/2011.07796){:target="_blank"}, **Pacific Journal of Mathematics**,
