@@ -1,0 +1,134 @@
+When a principal bundle's structure group reduces from SU(N)/Zₙ to SU(2)/Z₂, there's an underlying relationship between their characteristic classes, specifically the Stiefel-Whitney classes. To understand this relationship, let's delve into the properties of these groups and their associated bundles.
+
+**Background on the Groups:**
+
+- **SU(N)/Zₙ**: This is the special unitary group SU(N) modulo its center Zₙ. The center Zₙ consists of scalar multiples of the identity matrix by N-th roots of unity. Modding out by the center essentially removes these scalar matrices, resulting in a group with elements that are more "distinct" in terms of their action on vector spaces.
+
+- **SU(2)/Z₂ ≅ SO(3)**: Similarly, SU(2)/Z₂ is the special unitary group SU(2) modulo its center Z₂, which is isomorphic to the rotation group SO(3). This group acts on 3-dimensional real vector spaces and has well-studied topological properties.
+
+**Stiefel-Whitney Classes:**
+
+Stiefel-Whitney classes are characteristic classes associated with real vector bundles, taking values in cohomology with ℤ₂ coefficients. They provide algebraic invariants that classify vector bundles up to isomorphism.
+
+**The Relationship Between the Bundles:**
+
+When the structure group reduces from SU(N)/Zₙ to SU(2)/Z₂, there's a homomorphism from SU(2)/Z₂ into SU(N)/Zₙ. This homomorphism induces a pullback of characteristic classes from the SU(N)/Zₙ bundle to the SU(2)/Z₂ bundle.
+
+**Key Points:**
+
+1. **Second Stiefel-Whitney Class (w₂):** This class is particularly important because it measures the obstruction to lifting a bundle to a spin structure. For an SO(3) bundle (or SU(2)/Z₂ bundle), w₂ represents the obstruction to lifting it to an SU(2) bundle.
+
+2. **Relation via Pullback:** The second Stiefel-Whitney class of the SU(2)/Z₂ bundle is the pullback of the second Stiefel-Whitney class of the SU(N)/Zₙ bundle via the homomorphism induced by the group inclusion.
+
+3. **Mod 2 Reduction:** The characteristic classes of the SU(N)/Zₙ bundle, when reduced mod 2, correspond to those of the SU(2)/Z₂ bundle. This is because the homomorphism maps elements in a way that preserves the mod 2 cohomology classes.
+
+**Conclusion:**
+
+The relation between the Stiefel-Whitney classes is that the second Stiefel-Whitney class of the SU(2)/Z₂ bundle is equal to the reduction modulo 2 of the corresponding class in the SU(N)/Zₙ bundle. This means that the topology encoded by the Stiefel-Whitney classes of the larger SU(N)/Zₙ bundle manifests in the reduced SU(2)/Z₂ bundle through this mod 2 relationship.
+
+**Answer:**
+
+Because the SU(2)/Z₂ bundle is induced from the SU(N)/Zₙ bundle, their Stiefel-Whitney classes are related by pullback; specifically, the SU(2)/Z₂ bundle’s classes equal the SU(N)/Zₙ bundle’s classes reduced mod 2—that is, the SU(2)/Z₂ bundle’s w₂ equals the SU(N)/Zₙ bundle’s w₂ mod 2.
+
+Certainly! Here's a detailed proof of the relationship between the Stiefel-Whitney classes of an \( \mathrm{SU}(N)/\mathbb{Z}_N \) bundle and those of an \( \mathrm{SU}(2)/\mathbb{Z}_2 \) bundle when the structure group reduces from \( \mathrm{SU}(N)/\mathbb{Z}_N \) to \( \mathrm{SU}(2)/\mathbb{Z}_2 \).
+
+### **Overview**
+
+We will show that:
+
+- **Statement**: When the structure group of a principal \( \mathrm{SU}(N)/\mathbb{Z}_N \) bundle reduces to \( \mathrm{SU}(2)/\mathbb{Z}_2 \), the second Stiefel-Whitney class \( w_2 \) of the \( \mathrm{SU}(2)/\mathbb{Z}_2 \) bundle is equal to the second Stiefel-Whitney class of the original \( \mathrm{SU}(N)/\mathbb{Z}_N \) bundle pulled back via the inclusion homomorphism. That is, \( w_2^{\mathrm{SU}(2)/\mathbb{Z}_2} = w_2^{\mathrm{SU}(N)/\mathbb{Z}_N} \).
+
+### **Background Concepts**
+
+1. **Principal Bundles and Structure Group Reduction**:
+   - A principal \( G \)-bundle \( P \) over a manifold \( X \) has a structure group \( G \).
+   - If \( H \subset G \) is a subgroup, and the transition functions of \( P \) can be chosen to lie in \( H \), then the structure group of \( P \) reduces to \( H \).
+
+2. **Characteristic Classes**:
+   - **Stiefel-Whitney Classes** \( w_i \) are characteristic classes associated with real vector bundles, with values in \( H^i(X, \mathbb{Z}_2) \).
+   - These classes measure the topological twisting of the bundle.
+
+3. **Classifying Spaces**:
+   - Every principal \( G \)-bundle over \( X \) corresponds to a homotopy class of maps \( f: X \to BG \), where \( BG \) is the classifying space of \( G \).
+   - Characteristic classes can be defined as pullbacks of universal classes in \( H^*(BG, R) \) via \( f \).
+
+4. **Group Homomorphisms and Induced Maps**:
+   - A group homomorphism \( \phi: H \to G \) induces a map between classifying spaces \( B\phi: BH \to BG \).
+   - This, in turn, induces a pullback on cohomology \( \phi^*: H^*(BG, R) \to H^*(BH, R) \).
+
+### **The Proof**
+
+#### **Step 1: Establish the Group Homomorphism**
+
+- **Inclusion Homomorphism**:
+  - Consider the natural inclusion \( \iota: \mathrm{SU}(2) \hookrightarrow \mathrm{SU}(N) \), where \( \mathrm{SU}(2) \) is embedded in \( \mathrm{SU}(N) \) (e.g., in the upper-left \( 2 \times 2 \) block).
+  - This inclusion induces a homomorphism between the quotient groups:
+    \[ \phi: \mathrm{SU}(2)/\mathbb{Z}_2 \to \mathrm{SU}(N)/\mathbb{Z}_N \]
+
+#### **Step 2: Induced Maps on Classifying Spaces**
+
+- **Maps Between Classifying Spaces**:
+  - The homomorphism \( \phi \) induces a continuous map between classifying spaces:
+    \[ B\phi: B(\mathrm{SU}(2)/\mathbb{Z}_2) \to B(\mathrm{SU}(N)/\mathbb{Z}_N) \]
+  - This map reflects how \( \mathrm{SU}(2)/\mathbb{Z}_2 \)-bundles relate to \( \mathrm{SU}(N)/\mathbb{Z}_N \)-bundles.
+
+#### **Step 3: Relationship Between Bundles**
+
+- **Reduced Structure Group**:
+  - Let \( P \) be a principal \( \mathrm{SU}(N)/\mathbb{Z}_N \)-bundle over \( X \).
+  - Suppose the structure group reduces to \( \mathrm{SU}(2)/\mathbb{Z}_2 \) via \( \phi \), resulting in a principal \( \mathrm{SU}(2)/\mathbb{Z}_2 \)-bundle \( Q \).
+
+- **Classifying Maps**:
+  - The \( \mathrm{SU}(N)/\mathbb{Z}_N \)-bundle \( P \) has a classifying map \( f: X \to B(\mathrm{SU}(N)/\mathbb{Z}_N) \).
+  - The \( \mathrm{SU}(2)/\mathbb{Z}_2 \)-bundle \( Q \) has a classifying map \( g: X \to B(\mathrm{SU}(2)/\mathbb{Z}_2) \).
+
+- **Composition**:
+  - Since \( Q \) corresponds to \( P \) under the reduction, the following holds:
+    \[ f = B\phi \circ g \]
+
+#### **Step 4: Pullback of Characteristic Classes**
+
+- **Universal Stiefel-Whitney Classes**:
+  - Let \( w_2^{\mathrm{SU}(N)/\mathbb{Z}_N} \in H^2(B(\mathrm{SU}(N)/\mathbb{Z}_N), \mathbb{Z}_2) \) be the universal second Stiefel-Whitney class.
+  - Similarly, \( w_2^{\mathrm{SU}(2)/\mathbb{Z}_2} \in H^2(B(\mathrm{SU}(2)/\mathbb{Z}_2), \mathbb{Z}_2) \).
+
+- **Pullback via \( B\phi \)**:
+  - The map \( B\phi \) induces a pullback on cohomology:
+    \[ (B\phi)^*: H^2(B(\mathrm{SU}(N)/\mathbb{Z}_N), \mathbb{Z}_2) \to H^2(B(\mathrm{SU}(2)/\mathbb{Z}_2), \mathbb{Z}_2) \]
+  - Therefore:
+    \[ w_2^{\mathrm{SU}(2)/\mathbb{Z}_2} = (B\phi)^*(w_2^{\mathrm{SU}(N)/\mathbb{Z}_N}) \]
+
+#### **Step 5: Relate the Stiefel-Whitney Classes of the Bundles**
+
+- **Characteristic Classes of \( Q \)**:
+  - The second Stiefel-Whitney class of \( Q \) is:
+    \[ w_2(Q) = g^*(w_2^{\mathrm{SU}(2)/\mathbb{Z}_2}) \]
+
+- **Substitute \( w_2^{\mathrm{SU}(2)/\mathbb{Z}_2} \)**:
+  - Using the result from Step 4:
+    \[ w_2(Q) = g^*\left( (B\phi)^*(w_2^{\mathrm{SU}(N)/\mathbb{Z}_N}) \right) \]
+
+- **Composition of Pullbacks**:
+  - Since \( f = B\phi \circ g \), the pullback along \( f \) is:
+    \[ f^* = g^* \circ (B\phi)^* \]
+
+- **Conclude the Equality**:
+  - Therefore:
+    \[ w_2(Q) = f^*(w_2^{\mathrm{SU}(N)/\mathbb{Z}_N}) \]
+  - But \( f^*(w_2^{\mathrm{SU}(N)/\mathbb{Z}_N}) \) is the second Stiefel-Whitney class of \( P \):
+    \[ w_2(Q) = w_2(P) \]
+
+#### **Step 6: Interpretation**
+
+- **Equality of Stiefel-Whitney Classes**:
+  - The second Stiefel-Whitney class is preserved under the reduction of the structure group from \( \mathrm{SU}(N)/\mathbb{Z}_N \) to \( \mathrm{SU}(2)/\mathbb{Z}_2 \).
+
+- **Mod 2 Relation**:
+  - Since Stiefel-Whitney classes take values in \( \mathbb{Z}_2 \) cohomology, any integral characteristic classes pulled back will be reduced modulo 2.
+
+### **Conclusion**
+
+**Answer:**
+
+**Proof:**
+When the structure group reduces from SU(N)/ℤₙ to SU(2)/ℤ₂ via the inclusion homomorphism φ: SU(2)/ℤ₂ → SU(N)/ℤₙ, this induces a map between their classifying spaces Bφ: B(SU(2)/ℤ₂) → B(SU(N)/ℤₙ). The second Stiefel-Whitney class w₂ of the SU(2)/ℤ₂ bundle is the pullback of the SU(N)/ℤₙ bundle’s w₂ under this map—that is, w₂(SU(2)/ℤ₂ bundle) = Bφ* w₂(SU(N)/ℤₙ bundle). Therefore, w₂ is preserved under the reduction, showing that the SU(2)/ℤ₂ bundle’s w₂ equals that of the SU(N)/ℤₙ bundle.
