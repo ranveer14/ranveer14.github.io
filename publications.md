@@ -5,6 +5,9 @@ excerpt: "Know about Ranveer's publications on this page."
 ---
 
 #### Preprint
+
+1. Argyres-Douglas Theories, Macdonald Indices and Arc Space of Zhu Algebra, (With George Andrews, Anindya Banerjee, Chinmay Bhargava and Runkai Tao)[ArXiv:2507.06294](https://arxiv.org/abs/2507.06294){:target="_blank"}.
+1. Mock Modularity Of Twisted Index In CHL Models, (With Nabamita Banerjee and Vedant Bhutra), [ArXiv:2505.17182](https://arxiv.org/abs/2505.17182){:target="_blank"}.
 1. Topological Twisting of 4d N=2 Supersymmetric Field Theories, (With Gregory W. Moore and Vivek Saxena), [ArXiv:2411.14396](https://arxiv.org/abs/2411.14396){:target="_blank"}.
 1. Rationality of Lorentzian Lattice CFTs And The Associated Modular Tensor Category, (with Madhav Sinha and Runkai Tao), [ArXiv:2408.02744](https://arxiv.org/abs/2408.02744){:target="_blank"}.
 1. Beauty And The Beast Part 2: Apprehending The Missing Supercurrent, (with Gregory Moore), [ArXiv:2309.02382](https://arxiv.org/abs/2309.02382){:target="_blank"}.
