@@ -1,48 +1,133 @@
-<div class="pomodoro-app">
-  <h2>Pomodoro Timer</h2>
-  <div id="timer">25:00</div>
-  <button id="startBtn">Start</button>
-  <button id="resetBtn">Reset</button>
+<div id="pomodoro-app" class="pomodoro">
+  <h1>Pomodoro Timer</h1>
+  <div id="timer-display">25:00</div>
+  <div id="status-display">Work</div>
+  <button id="start-btn">Start</button>
+  <button id="reset-btn">Reset</button>
 
-  <h3>Session History</h3>
-  <ul id="history"></ul>
+  <h2>Session History</h2>
+  <ul id="history-list"></ul>
 </div>
 
+<style>
+  .pomodoro {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 12px;
+    background: #fdfdfd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  #timer-display {
+    font-size: 3em;
+    margin: 20px 0;
+  }
+  #status-display {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #007acc;
+    color: #fff;
+  }
+  button:hover {
+    background: #005f99;
+  }
+  #history-list {
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-left: 20px;
+  }
+</style>
+
 <script>
-(function() {
-  let timerDisplay = document.getElementById("timer");
-  let startBtn = document.getElementById("startBtn");
-  let resetBtn = document.getElementById("resetBtn");
-  let historyList = document.getElementById("history");
+  // Timer settings
+  const workDuration = 25 * 60;
+  const shortBreakDuration = 5 * 60;
+  const longBreakDuration = 15 * 60;
 
-  let duration = 25 * 60; // default work duration = 25 minutes
-  let timeLeft = duration;
-  let timer = null;
+  let timer;
+  let timeLeft = workDuration;
+  let isRunning = false;
+  let cycleCount = 0;
+  let status = "Work";
 
+  const display = document.getElementById("timer-display");
+  const statusDisplay = document.getElementById("status-display");
+  const historyList = document.getElementById("history-list");
+
+  // Load session history
+  function loadHistory() {
+    return JSON.parse(localStorage.getItem("pomodoroHistory") || "[]");
+  }
+
+  function saveHistory(history) {
+    localStorage.setItem("pomodoroHistory", JSON.stringify(history));
+  }
+
+  function recordSession(sessionType) {
+    const history = loadHistory();
+    history.unshift(`${sessionType} session completed at ${new Date().toLocaleString()}`);
+    saveHistory(history);
+    renderHistory();
+  }
+
+  function renderHistory() {
+    const history = loadHistory();
+    historyList.innerHTML = "";
+    history.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      historyList.appendChild(li);
+    });
+  }
+
+  // Timer control
   function updateDisplay() {
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
-    timerDisplay.textContent = 
-      String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+    const minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+    const seconds = String(timeLeft % 60).padStart(2, "0");
+    display.textContent = `${minutes}:${seconds}`;
+    statusDisplay.textContent = status;
   }
 
   function startTimer() {
-    if (timer) return; // already running
+    if (isRunning) return;
+    isRunning = true;
     timer = setInterval(() => {
       timeLeft--;
       updateDisplay();
+
       if (timeLeft <= 0) {
         clearInterval(timer);
-        timer = null;
+        isRunning = false;
+        recordSession(status);
 
-        // Record session
-        recordSession("Work session finished");
-
-        // Auto-redirect to pomodoro page
+        // Auto redirect back to pomodoro page
         window.location.href = "/pomodoro/";
 
-        // Reset timer for next session
-        timeLeft = duration;
+        // Advance cycle
+        if (status === "Work") {
+          cycleCount++;
+          if (cycleCount % 4 === 0) {
+            status = "Long Break";
+            timeLeft = longBreakDuration;
+          } else {
+            status = "Short Break";
+            timeLeft = shortBreakDuration;
+          }
+        } else {
+          status = "Work";
+          timeLeft = workDuration;
+        }
         updateDisplay();
       }
     }, 1000);
@@ -50,61 +135,16 @@
 
   function resetTimer() {
     clearInterval(timer);
-    timer = null;
-    timeLeft = duration;
+    isRunning = false;
+    status = "Work";
+    timeLeft = workDuration;
     updateDisplay();
   }
 
-  // ---- Session history handling ----
-  function recordSession(msg) {
-    let history = JSON.parse(localStorage.getItem("pomodoroHistory") || "[]");
-    history.unshift({
-      message: msg,
-      time: new Date().toLocaleString()
-    });
-    localStorage.setItem("pomodoroHistory", JSON.stringify(history));
-    renderHistory();
-  }
+  document.getElementById("start-btn").addEventListener("click", startTimer);
+  document.getElementById("reset-btn").addEventListener("click", resetTimer);
 
-  function renderHistory() {
-    historyList.innerHTML = "";
-    let history = JSON.parse(localStorage.getItem("pomodoroHistory") || "[]");
-    history.forEach(entry => {
-      let li = document.createElement("li");
-      li.textContent = `${entry.message} at ${entry.time}`;
-      historyList.appendChild(li);
-    });
-  }
-
-  // ---- Initialize ----
+  // Init
   updateDisplay();
   renderHistory();
-
-  startBtn.addEventListener("click", startTimer);
-  resetBtn.addEventListener("click", resetTimer);
-})();
 </script>
-
-<style>
-.pomodoro-app {
-  font-family: sans-serif;
-  text-align: center;
-  margin-top: 20px;
-}
-#timer {
-  font-size: 2em;
-  margin: 10px 0;
-}
-button {
-  margin: 5px;
-  padding: 10px 20px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-#history {
-  text-align: left;
-  max-width: 300px;
-  margin: 10px auto;
-}
-</style>
