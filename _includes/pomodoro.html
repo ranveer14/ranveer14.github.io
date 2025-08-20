@@ -1,150 +1,557 @@
-<div id="pomodoro-app" class="pomodoro">
-  <h1>Pomodoro Timer</h1>
-  <div id="timer-display">25:00</div>
-  <div id="status-display">Work</div>
-  <button id="start-btn">Start</button>
-  <button id="reset-btn">Reset</button>
+<!-- ===== Pomodoro App (drop-in include) ===== -->
+<div class="app" id="app">
+  <div class="header">
+    <div>
+      <div class="title">Pomodoro</div>
+      <div class="subtitle" id="modeLabel">Focus session</div>
+    </div>
+    <div class="modes">
+      <div class="chip active" data-mode="work">Work</div>
+      <div class="chip" data-mode="short">Short break</div>
+      <div class="chip" data-mode="long">Long break</div>
+    </div>
+  </div>
 
-  <h2>Session History</h2>
-  <ul id="history-list"></ul>
+  <div class="timer">
+    <div class="canvas">
+      <div class="ring" aria-label="Timer progress">
+        <svg width="280" height="280">
+          <circle cx="140" cy="140" r="120" fill="none" stroke="var(--ring)" stroke-width="16"></circle>
+          <circle id="progress" cx="140" cy="140" r="120" fill="none" stroke="var(--ring-progress)" stroke-width="16" stroke-linecap="round" stroke-dasharray="754" stroke-dashoffset="754"></circle>
+        </svg>
+        <div class="timebig">
+          <h1 id="readout">25:00</h1>
+          <div class="small" id="cycleText">Cycle 1 of 4</div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="primary" id="startPauseBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+        <button class="danger" id="skipBtn">Skip</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="grid">
+        <div class="row"><label>Work (min)</label><input type="number" id="workMin" min="1" value="25"></div>
+        <div class="row"><label>Short break (min)</label><input type="number" id="shortMin" min="1" value="5"></div>
+        <div class="row"><label>Long break (min)</label><input type="number" id="longMin" min="1" value="15"></div>
+        <div class="row"><label>Sessions before long break</label><input type="number" id="beforeLong" min="1" value="4"></div>
+        <div class="row">
+          <label class="switch"><input type="checkbox" id="autoNext" checked><span></span></label>
+          <span class="legend">Auto-advance sessions</span>
+        </div>
+        <div class="row">
+          <label class="switch"><input type="checkbox" id="soundOn" checked><span></span></label>
+          <span class="legend">Sound on finish</span>
+        </div>
+        <div class="row">
+          <label class="switch"><input type="checkbox" id="notifyOn"><span></span></label>
+          <span class="legend">Desktop notification</span>
+        </div>
+
+        <div class="tasks">
+          <label class="legend">Task (press Enter to add)</label>
+          <input type="text" id="taskInput" placeholder="What are you working on?" />
+          <div class="tasklist" id="taskList"></div>
+        </div>
+
+        <!-- NEW: Session History -->
+        <div class="history">
+          <div class="row" style="justify-content:space-between;">
+            <span class="legend">Session history</span>
+            <button id="clearHistory" title="Clear history">Clear</button>
+          </div>
+          <div class="historylist" id="historyList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Keyboard: <code>Space</code> start/pause, <code>R</code> reset, <code>N</code> skip</div>
+    <div><a href="#" id="clearData">Reset settings</a></div>
+  </div>
 </div>
 
 <style>
-  .pomodoro {
-    text-align: center;
-    margin: 40px auto;
-    max-width: 400px;
-    padding: 20px;
-    border: 2px solid #333;
-    border-radius: 12px;
-    background: #fdfdfd;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  :root {
+    --bg: #0b1220; --panel: #121a2b; --text: #eef2ff; --muted: #9aa4c7;
+    --accent: #75e0a3; --accent-2: #5fa8ff; --danger: #ff6b6b;
+    --ring: #23304d; --ring-progress: #75e0a3; --shadow: 0 10px 30px rgba(0,0,0,.35); --radius: 16px;
   }
-  #timer-display {
-    font-size: 3em;
-    margin: 20px 0;
-  }
-  #status-display {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-  button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 1em;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    background: #007acc;
-    color: #fff;
-  }
-  button:hover {
-    background: #005f99;
-  }
-  #history-list {
-    text-align: left;
-    max-height: 200px;
-    overflow-y: auto;
-    padding-left: 20px;
-  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    background: radial-gradient(1200px 600px at 20% -10%, #1b2a4d, transparent), var(--bg); color: var(--text);
+    min-height: 100dvh; display: grid; place-items: center; padding: 24px; }
+  .app { width: 100%; max-width: 820px; background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)), var(--panel);
+    border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; display: grid; gap: 20px; }
+  .header { display: flex; align-items: center; gap: 12px; justify-content: space-between; flex-wrap: wrap; }
+  .title { font-weight: 700; letter-spacing: .3px; }
+  .subtitle { color: var(--muted); font-size: 14px; }
+  .modes { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { border: 1px solid #2a395b; background: #11182a; padding: 8px 12px; border-radius: 999px; color: var(--muted); cursor: pointer; transition: .2s ease; user-select: none; }
+  .chip.active { border-color: var(--accent); color: var(--text); background: #0e1c2a; }
+  .timer { display: grid; grid-template-columns: 1fr 320px; gap: 24px; }
+  @media (max-width: 900px) { .timer { grid-template-columns: 1fr; } }
+  .canvas { display: grid; place-items: center; padding: 12px; }
+  .ring { position: relative; width: 280px; height: 280px; }
+  .ring svg { transform: rotate(-90deg); }
+  .timebig { position: absolute; inset: 0; display: grid; place-items: center; }
+  .timebig h1 { font-size: 56px; margin: 0; letter-spacing: .5px; }
+  .buttons { display: flex; gap: 10px; justify-content: center; margin-top: 10px; }
+  button { border: 1px solid #2a395b; background: #0f1630; color: var(--text); padding: 10px 14px; border-radius: 10px; cursor: pointer; transition: .2s ease; }
+  button:hover { transform: translateY(-1px); }
+  .primary { border-color: var(--accent-2); background: #0b1b31; }
+  .danger  { border-color: var(--danger);  background: #2a1120; }
+  .right { border-left: 1px dashed #2a395b; padding-left: 24px; }
+  @media (max-width: 900px) { .right { border-left: none; padding-left: 0; border-top: 1px dashed #2a395b; padding-top: 20px; } }
+  .grid { display: grid; gap: 12px; }
+  .row { display:flex; gap:10px; align-items:center; justify-content:space-between; }
+  .row label { color: var(--muted); }
+  input[type="number"] { width: 90px; background: #0b1328; border: 1px solid #2a395b; color: var(--text); padding: 8px 10px; border-radius: 8px; }
+  .switch { display: inline-flex; align-items:center; gap:8px; cursor:pointer; }
+  .switch input { appearance:none; width:42px; height:24px; background:#223150; border-radius:999px; position:relative; outline:none; transition:.2s; }
+  .switch input:checked { background:#2b6cb0; }
+  .switch input::after { content:""; position:absolute; width:18px; height:18px; background:#fff; border-radius:50%; top:3px; left:3px; transition:.2s; }
+  .switch input:checked::after { left:21px; }
+  .legend { color:var(--muted); font-size:12px; }
+  .tasks { margin-top: 6px; }
+  .tasks input[type="text"] { width: 100%; background: #0b1328; border: 1px solid #2a395b; color: var(--text); padding: 8px 10px; border-radius: 8px; }
+  .tasklist { margin-top: 8px; display: grid; gap: 6px; max-height: 160px; overflow: auto; }
+  .task { display:flex; align-items:center; gap:8px; background:#0b1328; border:1px solid #223150; padding:8px 10px; border-radius:8px; }
+  .task.completed { opacity:.7; text-decoration: line-through; }
+  .small { font-size: 12px; color:var(--muted); }
+  .footer { display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:12px; }
+  a { color: var(--accent-2); text-decoration:none; }
+
+  /* NEW: history styles */
+  .historylist { margin-top: 8px; display: grid; gap: 6px; max-height: 180px; overflow: auto; }
+  .hist { background:#0b1328; border:1px solid #223150; padding:8px 10px; border-radius:8px; }
 </style>
 
 <script>
-  // Timer settings
-  const workDuration = 25 * 60;
-  const shortBreakDuration = 5 * 60;
-  const longBreakDuration = 15 * 60;
+(function () {
+  // ===== Config =====
+  const POMODORO_URL = "/pomodoro/"; // change if your page is at a different path
 
-  let timer;
-  let timeLeft = workDuration;
-  let isRunning = false;
-  let cycleCount = 0;
-  let status = "Work";
+  // ------- State -------
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => document.querySelectorAll(s);
 
-  const display = document.getElementById("timer-display");
-  const statusDisplay = document.getElementById("status-display");
-  const historyList = document.getElementById("history-list");
+  const els = {
+    readout: $('#readout'),
+    progress: $('#progress'),
+    modeLabel: $('#modeLabel'),
+    cycleText: $('#cycleText'),
+    startPause: $('#startPauseBtn'),
+    reset: $('#resetBtn'),
+    skip: $('#skipBtn'),
+    chips: $$('.chip'),
+    workMin: $('#workMin'),
+    shortMin: $('#shortMin'),
+    longMin: $('#longMin'),
+    beforeLong: $('#beforeLong'),
+    autoNext: $('#autoNext'),
+    soundOn: $('#soundOn'),
+    notifyOn: $('#notifyOn'),
+    taskInput: $('#taskInput'),
+    taskList: $('#taskList'),
+    clearData: $('#clearData'),
+    // NEW for history
+    historyList: $('#historyList'),
+    clearHistory: $('#clearHistory'),
+  };
 
-  // Load session history
-  function loadHistory() {
-    return JSON.parse(localStorage.getItem("pomodoroHistory") || "[]");
+  const LS_KEY = 'pomodoro.v1';
+  const DEFAULTS = {
+    work: 25, short: 5, long: 15, beforeLong: 4,
+    autoNext: true, soundOn: true, notifyOn: false,
+    mode: 'work', cycle: 1
+  };
+
+  let settings = loadSettings();
+  let timer = {
+    mode: settings.mode,
+    cycle: settings.cycle,
+    running: false,
+    startAt: null,      // timestamp (ms)
+    endsAt: null,       // timestamp (ms)
+    remaining: minsToMs(getModeMinutes(settings.mode)),
+    tickId: null
+  };
+
+  const CIRC = 2 * Math.PI * 120;
+  els.progress.setAttribute('stroke-dasharray', String(CIRC));
+  document.addEventListener('visibilitychange', updateTitle);
+
+  // Try BroadcastChannel for cross-tab signals
+  let bc = null;
+  try { bc = new BroadcastChannel('pomodoro'); } catch {}
+
+  // ------- Helpers -------
+  function minsToMs(m) { return Math.max(0, Math.round(m) * 60_000); }
+  function msToMMSS(ms) {
+    ms = Math.max(0, ms|0);
+    const s = Math.ceil(ms / 1000);
+    const mm = Math.floor(s / 60).toString().padStart(2,'0');
+    const ss = (s % 60).toString().padStart(2,'0');
+    return `${mm}:${ss}`;
+  }
+  function now() { return Date.now(); }
+
+  function getModeMinutes(mode) {
+    if (mode === 'work') return Number(els.workMin.value || settings.work);
+    if (mode === 'short') return Number(els.shortMin.value || settings.short);
+    if (mode === 'long') return Number(els.longMin.value || settings.long);
+    return 25;
   }
 
-  function saveHistory(history) {
-    localStorage.setItem("pomodoroHistory", JSON.stringify(history));
+  function saveSettings() {
+    const data = {
+      work: Number(els.workMin.value),
+      short: Number(els.shortMin.value),
+      long: Number(els.longMin.value),
+      beforeLong: Number(els.beforeLong.value),
+      autoNext: els.autoNext.checked,
+      soundOn: els.soundOn.checked,
+      notifyOn: els.notifyOn.checked,
+      mode: timer.mode,
+      cycle: timer.cycle
+    };
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
   }
 
-  function recordSession(sessionType) {
-    const history = loadHistory();
-    history.unshift(`${sessionType} session completed at ${new Date().toLocaleString()}`);
-    saveHistory(history);
-    renderHistory();
+  function loadSettings() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      return raw ? { ...DEFAULTS, ...JSON.parse(raw) } : { ...DEFAULTS };
+    } catch {
+      return { ...DEFAULTS };
+    }
   }
 
-  function renderHistory() {
-    const history = loadHistory();
-    historyList.innerHTML = "";
-    history.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      historyList.appendChild(li);
-    });
+  function requestNotificationPermission() {
+    if (!('Notification' in window)) return;
+    if (Notification.permission === 'default' && els.notifyOn.checked) {
+      Notification.requestPermission().catch(()=>{});
+    }
   }
 
-  // Timer control
-  function updateDisplay() {
-    const minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
-    const seconds = String(timeLeft % 60).padStart(2, "0");
-    display.textContent = `${minutes}:${seconds}`;
-    statusDisplay.textContent = status;
+  function notify(title, body) {
+    if (!els.notifyOn.checked || !('Notification' in window)) return;
+    if (Notification.permission === 'granted') {
+      new Notification(title, { body });
+    }
+  }
+
+  function beep() {
+    if (!els.soundOn.checked || !('AudioContext' in window)) return;
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = 'sine';
+    o.frequency.value = 880;
+    o.connect(g); g.connect(ctx.destination);
+    g.gain.setValueAtTime(0.001, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.2, ctx.currentTime + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.35);
+    o.start(); o.stop(ctx.currentTime + 0.4);
+    setTimeout(()=>ctx.close(), 500);
+  }
+
+  function updateUI() {
+    els.chips.forEach(ch => ch.classList.toggle('active', ch.dataset.mode === timer.mode));
+    els.modeLabel.textContent =
+      timer.mode === 'work' ? 'Focus session' :
+      timer.mode === 'short' ? 'Short break' : 'Long break';
+    els.cycleText.textContent = timer.mode === 'work'
+      ? `Cycle ${timer.cycle} of ${Number(els.beforeLong.value)}`
+      : `Break • Next: Work`;
+
+    els.readout.textContent = msToMMSS(timer.remaining);
+
+    const full = minsToMs(getModeMinutes(timer.mode));
+    const p = full === 0 ? 1 : 1 - (timer.remaining / full);
+    els.progress.setAttribute('stroke-dashoffset', String(CIRC * (1 - p)));
+
+    els.startPause.textContent = timer.running ? 'Pause' : 'Start';
+
+    updateTitle();
+  }
+
+  function updateTitle() {
+    const prefix = timer.mode === 'work' ? '🔴' : timer.mode === 'short' ? '🟢' : '🔵';
+    document.title = `${prefix} ${msToMMSS(timer.remaining)} • Pomodoro`;
+  }
+
+  function setMode(mode) {
+    timer.mode = mode;
+    timer.remaining = minsToMs(getModeMinutes(mode));
+    timer.startAt = null;
+    timer.endsAt = null;
+    timer.running = false;
+    clearInterval(timer.tickId); timer.tickId = null;
+    updateUI(); saveSettings();
+  }
+
+  function nextMode() {
+    if (timer.mode === 'work') {
+      if (timer.cycle >= Number(els.beforeLong.value)) {
+        timer.mode = 'long';
+        timer.cycle = 1;
+      } else {
+        timer.mode = 'short';
+        timer.cycle += 1;
+      }
+    } else {
+      timer.mode = 'work';
+    }
+    timer.remaining = minsToMs(getModeMinutes(timer.mode));
+    timer.startAt = null; timer.endsAt = null; timer.running = false;
+    updateUI(); saveSettings();
+    if (els.autoNext.checked) startTimer();
   }
 
   function startTimer() {
-    if (isRunning) return;
-    isRunning = true;
-    timer = setInterval(() => {
-      timeLeft--;
-      updateDisplay();
+    if (timer.running) return;
+    const full = minsToMs(getModeMinutes(timer.mode));
+    const remain = timer.remaining > 0 ? timer.remaining : full;
+    timer.startAt = now();
+    timer.endsAt  = timer.startAt + remain;
+    timer.running = true;
 
-      if (timeLeft <= 0) {
-        clearInterval(timer);
-        isRunning = false;
-        recordSession(status);
-
-        // Auto redirect back to pomodoro page
-        window.location.href = "/pomodoro/";
-
-        // Advance cycle
-        if (status === "Work") {
-          cycleCount++;
-          if (cycleCount % 4 === 0) {
-            status = "Long Break";
-            timeLeft = longBreakDuration;
-          } else {
-            status = "Short Break";
-            timeLeft = shortBreakDuration;
-          }
-        } else {
-          status = "Work";
-          timeLeft = workDuration;
-        }
-        updateDisplay();
+    clearInterval(timer.tickId);
+    timer.tickId = setInterval(() => {
+      const t = Math.max(0, timer.endsAt - now());
+      timer.remaining = t;
+      if (t <= 0) {
+        clearInterval(timer.tickId);
+        timer.running = false;
+        finish();
       }
-    }, 1000);
+      updateUI();
+    }, 200);
+
+    updateUI();
+  }
+
+  function pauseTimer() {
+    if (!timer.running) return;
+    timer.running = false;
+    clearInterval(timer.tickId); timer.tickId = null;
+    timer.remaining = Math.max(0, timer.endsAt - now());
+    updateUI(); saveSettings();
   }
 
   function resetTimer() {
-    clearInterval(timer);
-    isRunning = false;
-    status = "Work";
-    timeLeft = workDuration;
-    updateDisplay();
+    timer.running = false;
+    clearInterval(timer.tickId); timer.tickId = null;
+    timer.remaining = minsToMs(getModeMinutes(timer.mode));
+    timer.startAt = null; timer.endsAt = null;
+    updateUI(); saveSettings();
   }
 
-  document.getElementById("start-btn").addEventListener("click", startTimer);
-  document.getElementById("reset-btn").addEventListener("click", resetTimer);
+  // ===== NEW: Session History =====
+  function formatDuration(ms) {
+    const s = Math.round(ms/1000);
+    const m = Math.floor(s/60), r = s%60;
+    return `${m}m ${r}s`;
+  }
+  function recordHistory(entry) {
+    const key = LS_KEY + '.history';
+    const arr = JSON.parse(localStorage.getItem(key) || '[]');
+    arr.unshift(entry);
+    // keep last 500 entries
+    localStorage.setItem(key, JSON.stringify(arr.slice(0, 500)));
+    renderHistory();
+  }
+  function renderHistory() {
+    if (!els.historyList) return;
+    const arr = JSON.parse(localStorage.getItem(LS_KEY + '.history') || '[]');
+    els.historyList.innerHTML = arr.map(e => `
+      <div class="hist">
+        <div><strong>${e.mode}</strong> • ${formatDuration(e.elapsed)} • ${new Date(e.endedAt).toLocaleString()}</div>
+        ${e.note ? `<div class="small">${e.note}</div>` : ''}
+      </div>
+    `).join('');
+  }
 
-  // Init
-  updateDisplay();
-  renderHistory();
+  // ===== NEW: Cross-tab redirect signal =====
+  function broadcastRedirect() {
+    // 1) Storage event for other tabs
+    localStorage.setItem(LS_KEY + '.redirect', String(Date.now()));
+    // 2) BroadcastChannel if available
+    try { bc && bc.postMessage({ type: 'redirect', at: Date.now() }); } catch {}
+    // 3) Redirect this tab
+    window.location.href = POMODORO_URL;
+  }
+
+  // Handle incoming signals on this page too (in case timer runs elsewhere)
+  window.addEventListener('storage', (e) => {
+    if (e.key === LS_KEY + '.redirect' && e.newValue) {
+      window.location.href = POMODORO_URL;
+    }
+  });
+  if (bc) {
+    bc.onmessage = (ev) => {
+      if (ev.data && ev.data.type === 'redirect') {
+        window.location.href = POMODORO_URL;
+      }
+    };
+  }
+
+  function finish() {
+    const endedAt = now();
+    const elapsed = timer.startAt ? (endedAt - timer.startAt) : minsToMs(getModeMinutes(timer.mode));
+
+    // Record to history (use current "top" task as a note if present)
+    const firstTask = (JSON.parse(localStorage.getItem(LS_KEY + '.tasks') || '[]')[0] || {}).text;
+    recordHistory({
+      mode: timer.mode === 'work' ? 'Work' : (timer.mode === 'short' ? 'Short break' : 'Long break'),
+      startedAt: timer.startAt,
+      endedAt,
+      elapsed,
+      note: firstTask ? `Task: ${firstTask}` : ''
+    });
+
+    // feedback
+    beep();
+    notify('Pomodoro finished', timer.mode === 'work' ? 'Time for a break!' : 'Back to work!');
+
+    // NEW: force all tabs/windows to open the Pomodoro page
+    broadcastRedirect();
+
+    // advance or stop (state will be reloaded after navigation; this preserves logic if user cancels nav)
+    if (els.autoNext.checked) {
+      nextMode();
+    } else {
+      updateUI();
+    }
+  }
+
+  // ------- Tasks -------
+  function renderTasks() {
+    const raw = JSON.parse(localStorage.getItem(LS_KEY + '.tasks') || '[]');
+    els.taskList.innerHTML = '';
+    raw.forEach((t, i) => {
+      const div = document.createElement('div');
+      div.className = 'task' + (t.done ? ' completed' : '');
+      div.innerHTML = `
+        <input type="checkbox" ${t.done ? 'checked' : ''} data-i="${i}" />
+        <span style="flex:1">${escapeHtml(t.text)}</span>
+        <button data-del="${i}" title="Delete">✕</button>
+      `;
+      els.taskList.appendChild(div);
+    });
+  }
+  function saveTask(text) {
+    const arr = JSON.parse(localStorage.getItem(LS_KEY + '.tasks') || '[]');
+    arr.unshift({ text, done: false });
+    localStorage.setItem(LS_KEY + '.tasks', JSON.stringify(arr));
+    renderTasks();
+  }
+  function toggleTask(i, done) {
+    const arr = JSON.parse(localStorage.getItem(LS_KEY + '.tasks') || '[]');
+    if (arr[i]) arr[i].done = done;
+    localStorage.setItem(LS_KEY + '.tasks', JSON.stringify(arr));
+    renderTasks();
+  }
+  function deleteTask(i) {
+    const arr = JSON.parse(localStorage.getItem(LS_KEY + '.tasks') || '[]');
+    arr.splice(i,1);
+    localStorage.setItem(LS_KEY + '.tasks', JSON.stringify(arr));
+    renderTasks();
+  }
+  function escapeHtml(s) { return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+  // ------- Events -------
+  els.chips.forEach(chip => chip.addEventListener('click', () => setMode(chip.dataset.mode)));
+  els.startPause.addEventListener('click', () => { timer.running ? pauseTimer() : startTimer(); });
+  els.reset.addEventListener('click', resetTimer);
+  els.skip.addEventListener('click', nextMode);
+
+  [els.workMin, els.shortMin, els.longMin, els.beforeLong].forEach(inp => {
+    inp.addEventListener('change', () => {
+      saveSettings();
+      if (!timer.running) {
+        const full = minsToMs(getModeMinutes(timer.mode));
+        timer.remaining = Math.min(timer.remaining, full);
+        updateUI();
+      }
+    });
+  });
+  [els.autoNext, els.soundOn, els.notifyOn].forEach(inp => {
+    inp.addEventListener('change', () => {
+      saveSettings();
+      if (inp === els.notifyOn) requestNotificationPermission();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') { e.preventDefault(); timer.running ? pauseTimer() : startTimer(); }
+    if (e.key.toLowerCase() === 'r') { e.preventDefault(); resetTimer(); }
+    if (e.key.toLowerCase() === 'n') { e.preventDefault(); nextMode(); }
+  });
+
+  els.taskInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const txt = els.taskInput.value.trim();
+      if (txt) { saveTask(txt); els.taskInput.value=''; }
+    }
+  });
+  els.taskList.addEventListener('change', (e) => {
+    if (e.target.matches('input[type="checkbox"]')) toggleTask(Number(e.target.dataset.i), e.target.checked);
+  });
+  els.taskList.addEventListener('click', (e) => {
+    if (e.target.matches('button[data-del]')) deleteTask(Number(e.target.dataset.del));
+  });
+
+  els.clearData.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (confirm('Reset all Pomodoro settings & tasks?')) {
+      localStorage.removeItem(LS_KEY);
+      localStorage.removeItem(LS_KEY + '.tasks');
+      localStorage.removeItem(LS_KEY + '.history');
+      settings = { ...DEFAULTS };
+      els.workMin.value = settings.work;
+      els.shortMin.value = settings.short;
+      els.longMin.value = settings.long;
+      els.beforeLong.value = settings.beforeLong;
+      els.autoNext.checked = settings.autoNext;
+      els.soundOn.checked = settings.soundOn;
+      els.notifyOn.checked = settings.notifyOn;
+      setMode('work');
+      renderTasks();
+      renderHistory();
+    }
+  });
+
+  // NEW: Clear history button
+  els.clearHistory.addEventListener('click', () => {
+    if (confirm('Clear session history?')) {
+      localStorage.removeItem(LS_KEY + '.history');
+      renderHistory();
+    }
+  });
+
+  // ------- Init -------
+  function initFromSettings() {
+    els.workMin.value = settings.work;
+    els.shortMin.value = settings.short;
+    els.longMin.value = settings.long;
+    els.beforeLong.value = settings.beforeLong;
+    els.autoNext.checked = settings.autoNext;
+    els.soundOn.checked = settings.soundOn;
+    els.notifyOn.checked = settings.notifyOn;
+    timer.mode = settings.mode;
+    timer.cycle = settings.cycle;
+    timer.remaining = minsToMs(getModeMinutes(timer.mode));
+    updateUI();
+    renderTasks();
+    renderHistory();
+    requestNotificationPermission();
+  }
+  initFromSettings();
+})();
 </script>
