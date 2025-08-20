@@ -5,4 +5,4 @@ title: Pomodoro
 
 # Pomodoro Timer
 
-{% include pomodoro.html %}
+{% include pomodoro.js %}
