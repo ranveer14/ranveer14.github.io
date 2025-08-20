@@ -1,0 +1,215 @@
+<!-- ===== Pomodoro App (Drop-in include with Task-wise History) ===== -->
+<div class="app-container">
+
+  <!-- ===== Tabs ===== -->
+  <div class="tab-buttons">
+    <button id="tab-timer" class="active">Timer</button>
+    <button id="tab-history">History</button>
+  </div>
+
+  <!-- ===== Timer Tab ===== -->
+  <div id="content-timer" class="tab-content active">
+    <div class="app" id="app">
+      <div class="header">
+        <div>
+          <div class="title">Pomodoro</div>
+          <div class="subtitle" id="modeLabel">Focus session</div>
+        </div>
+        <div class="modes">
+          <div class="chip active" data-mode="work">Work</div>
+          <div class="chip" data-mode="short">Short break</div>
+          <div class="chip" data-mode="long">Long break</div>
+        </div>
+      </div>
+
+      <div class="timer">
+        <div class="canvas">
+          <div class="ring" aria-label="Timer progress">
+            <svg width="280" height="280">
+              <circle cx="140" cy="140" r="120" fill="none" stroke="var(--ring)" stroke-width="16"></circle>
+              <circle id="progress" cx="140" cy="140" r="120" fill="none" stroke="var(--ring-progress)" stroke-width="16" stroke-linecap="round" stroke-dasharray="754" stroke-dashoffset="754"></circle>
+            </svg>
+            <div class="timebig">
+              <h1 id="readout">25:00</h1>
+              <div class="small" id="cycleText">Cycle 1 of 4</div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="primary" id="startPauseBtn">Start</button>
+            <button id="resetBtn">Reset</button>
+            <button class="danger" id="skipBtn">Skip</button>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="grid">
+            <div class="row"><label>Work (min)</label><input type="number" id="workMin" min="1" value="25"></div>
+            <div class="row"><label>Short break (min)</label><input type="number" id="shortMin" min="1" value="5"></div>
+            <div class="row"><label>Long break (min)</label><input type="number" id="longMin" min="1" value="15"></div>
+            <div class="row"><label>Sessions before long break</label><input type="number" id="beforeLong" min="1" value="4"></div>
+            <div class="row">
+              <label class="switch"><input type="checkbox" id="autoNext" checked><span></span></label>
+              <span class="legend">Auto-advance sessions</span>
+            </div>
+            <div class="row">
+              <label class="switch"><input type="checkbox" id="soundOn" checked><span></span></label>
+              <span class="legend">Sound on finish</span>
+            </div>
+            <div class="row">
+              <label class="switch"><input type="checkbox" id="notifyOn"><span></span></label>
+              <span class="legend">Desktop notification</span>
+            </div>
+
+            <div class="tasks">
+              <label class="legend">Task (press Enter to add)</label>
+              <input type="text" id="taskInput" placeholder="What are you working on?" />
+              <div class="tasklist" id="taskList"></div>
+            </div>
+
+            <div class="row">
+              <button class="danger" id="clearData">Reset settings & tasks</button>
+              <button id="clearHistory">Clear History</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>Keyboard: <code>Space</code> start/pause, <code>R</code> reset, <code>N</code> skip</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== History Tab ===== -->
+  <div id="content-history" class="tab-content">
+    <div class="historylist" id="taskHistory"></div>
+  </div>
+
+</div>
+
+<style>
+  :root {
+    --bg: #0b1220; --panel: #121a2b; --text: #eef2ff; --muted: #9aa4c7;
+    --accent: #75e0a3; --accent-2: #5fa8ff; --danger: #ff6b6b;
+    --ring: #23304d; --ring-progress: #75e0a3; --shadow: 0 10px 30px rgba(0,0,0,.35); --radius: 16px;
+  }
+  body{margin:0;font-family:ui-sans-serif,sans-serif; background: var(--bg);}
+  .app-container{max-width:820px;margin:0 auto;padding:24px;}
+  .tab-buttons { display:flex; gap:10px; margin-bottom:12px;}
+  .tab-buttons button{flex:1;padding:8px;cursor:pointer;border:none;background:#0b1220;color:#fff;}
+  .tab-buttons button.active{border-bottom:2px solid var(--accent);}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
+  .task-history-card{padding:10px;margin:6px 0;border-radius:10px;color:#fff;font-weight:bold;}
+</style>
+
+<script>
+(function(){
+  // ===== Constants =====
+  const LS_KEY = 'pomodoro.v1';
+  const POMODORO_URL = '/pomodoro/';
+  const DEFAULTS = {work:25, short:5, long:15, beforeLong:4, autoNext:true, soundOn:true, notifyOn:false, mode:'work', cycle:1};
+
+  const $ = s=>document.querySelector(s);
+  const $$ = s=>document.querySelectorAll(s);
+
+  const els = {
+    readout: $('#readout'), progress: $('#progress'), modeLabel: $('#modeLabel'),
+    cycleText: $('#cycleText'), startPause: $('#startPauseBtn'), reset: $('#resetBtn'),
+    skip: $('#skipBtn'), chips: $$('.chip'), workMin: $('#workMin'),
+    shortMin: $('#shortMin'), longMin: $('#longMin'), beforeLong: $('#beforeLong'),
+    autoNext: $('#autoNext'), soundOn: $('#soundOn'), notifyOn: $('#notifyOn'),
+    taskInput: $('#taskInput'), taskList: $('#taskList'),
+    clearData: $('#clearData'), clearHistory: $('#clearHistory')
+  };
+
+  let settings = loadSettings();
+  let timer = {mode:settings.mode, cycle:settings.cycle, running:false, startAt:null, endsAt:null, remaining: minsToMs(getModeMinutes(settings.mode)), tickId:null};
+  const CIRC = 2*Math.PI*120;
+  els.progress.setAttribute('stroke-dasharray',String(CIRC));
+
+  // ===== Tab logic =====
+  const tabTimer = $('#tab-timer'), tabHistory = $('#tab-history');
+  const contentTimer = $('#content-timer'), contentHistory = $('#content-history');
+  tabTimer.addEventListener('click',()=>showTab('timer'));
+  tabHistory.addEventListener('click',()=>showTab('history'));
+  function showTab(tab){
+    if(tab==='timer'){contentTimer.classList.add('active');contentHistory.classList.remove('active');tabTimer.classList.add('active');tabHistory.classList.remove('active');}
+    else{contentTimer.classList.remove('active');contentHistory.classList.add('active');tabTimer.classList.remove('active');tabHistory.classList.add('active');renderTaskHistory();}
+  }
+
+  // ===== Helpers =====
+  function now(){return Date.now();}
+  function minsToMs(m){return Math.max(0,Math.round(m)*60_000);}
+  function msToMMSS(ms){ms=Math.max(0,ms|0); const s=Math.ceil(ms/1000); return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;}
+  function getModeMinutes(mode){return mode==='work'?Number(els.workMin.value||settings.work):mode==='short'?Number(els.shortMin.value||settings.short):Number(els.longMin.value||settings.long);}
+  function beep(){if(!els.soundOn.checked||!window.AudioContext)return; const ctx=new AudioContext(); const o=ctx.createOscillator(); const g=ctx.createGain(); o.type='sine'; o.frequency.value=880; o.connect(g); g.connect(ctx.destination); g.gain.setValueAtTime(0.001,ctx.currentTime); g.gain.exponentialRampToValueAtTime(0.2,ctx.currentTime+0.02); g.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+0.35); o.start(); o.stop(ctx.currentTime+0.4); setTimeout(()=>ctx.close(),500);}
+  function notify(title,body){if(!('Notification'in window)||!els.notifyOn.checked) return; if(Notification.permission==='granted'){new Notification(title,{body});}}
+  function requestNotificationPermission(){if('Notification' in window && Notification.permission==='default' && els.notifyOn.checked){Notification.requestPermission().catch(()=>{});}}
+  function saveSettings(){localStorage.setItem(LS_KEY,JSON.stringify({work:Number(els.workMin.value),short:Number(els.shortMin.value),long:Number(els.longMin.value),beforeLong:Number(els.beforeLong.value),autoNext:els.autoNext.checked,soundOn:els.soundOn.checked,notifyOn:els.notifyOn.checked,mode:timer.mode,cycle:timer.cycle}));}
+  function loadSettings(){try{const raw=localStorage.getItem(LS_KEY); return raw?{...DEFAULTS,...JSON.parse(raw)}:{...DEFAULTS};}catch{return {...DEFAULTS};}}
+
+  function updateUI(){els.chips.forEach(ch=>ch.classList.toggle('active',ch.dataset.mode===timer.mode));els.modeLabel.textContent=timer.mode==='work'?'Focus session':timer.mode==='short'?'Short break':'Long break'; els.cycleText.textContent=timer.mode==='work'?`Cycle ${timer.cycle} of ${Number(els.beforeLong.value)}`:'Break • Next: Work'; els.readout.textContent=msToMMSS(timer.remaining); const full=minsToMs(getModeMinutes(timer.mode)); els.progress.setAttribute('stroke-dashoffset',String(CIRC*(1-(timer.remaining/full)))); els.startPause.textContent=timer.running?'Pause':'Start'; document.title=(timer.mode==='work'?'🔴':timer.mode==='short'?'🟢':'🔵')+` ${msToMMSS(timer.remaining)} • Pomodoro`; }
+
+  function setMode(mode){timer.mode=mode; timer.remaining=minsToMs(getModeMinutes(mode)); timer.startAt=null; timer.endsAt=null; timer.running=false; clearInterval(timer.tickId); timer.tickId=null; updateUI(); saveSettings(); }
+  function nextMode(){if(timer.mode==='work'){if(timer.cycle>=Number(els.beforeLong.value)){timer.mode='long';timer.cycle=1;}else{timer.mode='short';timer.cycle+=1;}}else{timer.mode='work';} timer.remaining=minsToMs(getModeMinutes(timer.mode)); timer.startAt=null; timer.endsAt=null; timer.running=false; updateUI(); saveSettings(); if(els.autoNext.checked) startTimer(); }
+  function startTimer(){if(timer.running)return; const full=minsToMs(getModeMinutes(timer.mode)); const remain=timer.remaining>0?timer.remaining:full; timer.startAt=now(); timer.endsAt=timer.startAt+remain; timer.running=true; clearInterval(timer.tickId); timer.tickId=setInterval(()=>{timer.remaining=Math.max(0,timer.endsAt-now()); if(timer.remaining<=0){clearInterval(timer.tickId);timer.running=false; finish();} updateUI(); },200); updateUI();}
+  function pauseTimer(){if(!timer.running)return; timer.running=false; clearInterval(timer.tickId); timer.tickId=null; timer.remaining=Math.max(0,timer.endsAt-now()); updateUI(); saveSettings();}
+  function resetTimer(){timer.running=false; clearInterval(timer.tickId); timer.tickId=null; timer.remaining=minsToMs(getModeMinutes(timer.mode)); timer.startAt=null; timer.endsAt=null; updateUI(); saveSettings();}
+
+  // ===== Tasks =====
+  function renderTasks(){const raw=JSON.parse(localStorage.getItem(LS_KEY+'.tasks')||'[]'); els.taskList.innerHTML=''; raw.forEach((t,i)=>{const div=document.createElement('div'); div.className='task'+(t.done?' completed':''); div.innerHTML=`<input type="checkbox" ${t.done?'checked':''} data-i="${i}"/><span style="flex:1">${escapeHtml(t.text)}</span><button data-del="${i}" title="Delete">✕</button>`; els.taskList.appendChild(div);});}
+  function saveTask(text){const arr=JSON.parse(localStorage.getItem(LS_KEY+'.tasks')||'[]'); arr.unshift({text,done:false}); localStorage.setItem(LS_KEY+'.tasks',JSON.stringify(arr)); renderTasks();}
+  function toggleTask(i,done){const arr=JSON.parse(localStorage.getItem(LS_KEY+'.tasks')||'[]'); if(arr[i])arr[i].done=done; localStorage.setItem(LS_KEY+'.tasks',JSON.stringify(arr)); renderTasks();}
+  function deleteTask(i){const arr=JSON.parse(localStorage.getItem(LS_KEY+'.tasks')||'[]'); arr.splice(i,1); localStorage.setItem(LS_KEY+'.tasks',JSON.stringify(arr)); renderTasks();}
+  function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+
+  // ===== Finish & History =====
+  function finish(){
+    const endedAt=now();
+    const elapsed=timer.startAt?endedAt-timer.startAt:minsToMs(getModeMinutes(timer.mode));
+    const tasks=JSON.parse(localStorage.getItem(LS_KEY+'.tasks')||'[]');
+    const currentTask=tasks[0]?.text||'Untitled';
+    const histKey=LS_KEY+'.taskHistory';
+    const history=JSON.parse(localStorage.getItem(histKey)||'{}');
+    if(!history[currentTask]) history[currentTask]=0; history[currentTask]+=1;
+    localStorage.setItem(histKey,JSON.stringify(history));
+    renderTaskHistory(); beep(); notify('Pomodoro finished',timer.mode==='work'?'Time for break!':'Back to work!'); 
+    if(els.autoNext.checked) nextMode(); else updateUI();
+  }
+
+  function renderTaskHistory(){
+    const container=document.getElementById('taskHistory'); if(!container)return;
+    const history=JSON.parse(localStorage.getItem(LS_KEY+'.taskHistory')||'{}');
+    container.innerHTML='';
+    Object.keys(history).sort().forEach((task,i)=>{
+      const count=history[task];
+      const card=document.createElement('div');
+      card.className='task-history-card';
+      const hue=(i*70)%360;
+      card.style.background=`hsl(${hue},70%,50%)`;
+      card.textContent=`${task}: ${count} session${count>1?'s':''}`;
+      container.appendChild(card);
+    });
+  }
+
+  // ===== Event bindings =====
+  els.chips.forEach(chip=>chip.addEventListener('click',()=>setMode(chip.dataset.mode)));
+  els.startPause.addEventListener('click',()=>timer.running?pauseTimer():startTimer());
+  els.reset.addEventListener('click',resetTimer);
+  els.skip.addEventListener('click',nextMode);
+  [els.workMin,els.shortMin,els.longMin,els.beforeLong].forEach(inp=>inp.addEventListener('change',()=>{saveSettings(); if(!timer.running){timer.remaining=minsToMs(getModeMinutes(timer.mode)); updateUI();}}));
+  [els.autoNext,els.soundOn,els.notifyOn].forEach(inp=>inp.addEventListener('change',()=>{saveSettings(); if(inp===els.notifyOn)requestNotificationPermission();}));
+  els.taskInput.addEventListener('keypress',e=>{if(e.key==='Enter'&&els.taskInput.value.trim()){saveTask(els.taskInput.value.trim()); els.taskInput.value='';}});
+  els.taskList.addEventListener('change',e=>{if(e.target.dataset.i!==undefined)toggleTask(e.target.dataset.i,e.target.checked);});
+  els.taskList.addEventListener('click',e=>{if(e.target.dataset.del!==undefined)deleteTask(e.target.dataset.del);});
+  els.clearData.addEventListener('click',()=>{if(confirm('Reset all settings and tasks?')){localStorage.removeItem(LS_KEY); localStorage.removeItem(LS_KEY+'.tasks'); localStorage.removeItem(LS_KEY+'.taskHistory'); location.reload();}});
+  els.clearHistory.addEventListener('click',()=>{if(confirm('Clear all task-wise session history?')){localStorage.removeItem(LS_KEY+'.taskHistory'); renderTaskHistory();}});
+
+  // ===== Keyboard shortcuts =====
+  document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return; if(e.code==='Space'){e.preventDefault(); timer.running?pauseTimer():startTimer();}else if(e.code==='KeyR'){resetTimer();}else if(e.code==='KeyN'){nextMode();}});
+
+  // ===== Init =====
+  renderTasks(); renderTaskHistory(); updateUI(); requestNotificationPermission();
+})();
+</script>
