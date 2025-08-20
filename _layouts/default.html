@@ -1,6 +1,64 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 <div id="pomodoro-app"></div>
+<div id="pomodoro-floating-timer" style="
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #0b1328;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  cursor: pointer;
+">
+  <span id="floating-timer-label">Pomodoro:</span> 
+  <span id="floating-timer-time">25:00</span>
+</div>
+<script>
+(function() {
+  const timerLabel = document.getElementById('floating-timer-label');
+  const timerTime  = document.getElementById('floating-timer-time');
+
+  const LS_KEY = 'pomodoro.v1';
+  const DEFAULT_WORK = 25*60*1000;
+
+  // Simple floating timer, checks localStorage from main Pomodoro tab
+  function updateFloatingTimer() {
+    const dataRaw = localStorage.getItem(LS_KEY);
+    if (!dataRaw) {
+      timerTime.textContent = '25:00';
+      return;
+    }
+    const settings = JSON.parse(dataRaw);
+    let mode = settings.mode || 'work';
+    let mins = (mode === 'work') ? settings.work : (mode === 'short') ? settings.short : settings.long;
+    let startAt = settings.startAt || 0;
+    let remaining = mins*60*1000;
+
+    if (settings.running && startAt) {
+      const elapsed = Date.now() - startAt;
+      remaining = Math.max(0, mins*60*1000 - elapsed);
+    }
+
+    const s = Math.ceil(remaining/1000);
+    const mm = String(Math.floor(s/60)).padStart(2,'0');
+    const ss = String(s%60).padStart(2,'0');
+    timerTime.textContent = `${mm}:${ss}`;
+  }
+
+  updateFloatingTimer();
+  setInterval(updateFloatingTimer, 1000);
+
+  // Optional: click floating timer to go to Pomodoro page
+  document.getElementById('pomodoro-floating-timer').addEventListener('click', () => {
+    window.location.href = '/pomodoro/';
+  });
+})();
+</script>
 
   <head>
     <!-- General meta -->
