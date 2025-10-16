@@ -6,6 +6,7 @@ excerpt: "Know about Ranveer's publications on this page."
 
 #### Preprint
 
+1. Generating Function of Single Centered Black Hole Index from the Igusa Cusp Form, (With Ajit Bhand and Ashoke Sen), [ArXiv:2510.05219](https://arxiv.org/abs/2510.05219){:target="_blank"}.
 1. Argyres-Douglas Theories, Macdonald Indices and Arc Space of Zhu Algebra, (With George Andrews, Anindya Banerjee, Chinmay Bhargava and Runkai Tao), [ArXiv:2507.06294](https://arxiv.org/abs/2507.06294){:target="_blank"}.
 1. Mock Modularity Of Twisted Index In CHL Models, (With Nabamita Banerjee and Vedant Bhutra), [ArXiv:2505.17182](https://arxiv.org/abs/2505.17182){:target="_blank"}.
 1. Topological Twisting of 4d N=2 Supersymmetric Field Theories, (With Gregory W. Moore and Vivek Saxena), [ArXiv:2411.14396](https://arxiv.org/abs/2411.14396){:target="_blank"}.
