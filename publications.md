@@ -6,15 +6,16 @@ excerpt: "Know about Ranveer's publications on this page."
 
 #### Preprint
 
+1. Macdonald Index From Refined Kontsevich-Soibelman Operator, (With George Andrews, Anindya Banerjee and Runkai Tao), [ArXiv:2511.07521](https://arxiv.org/abs/2511.07521){:target="_blank"}.
 1. Generating Function of Single Centered Black Hole Index from the Igusa Cusp Form, (With Ajit Bhand and Ashoke Sen), [ArXiv:2510.05219](https://arxiv.org/abs/2510.05219){:target="_blank"}.
 1. Argyres-Douglas Theories, Macdonald Indices and Arc Space of Zhu Algebra, (With George Andrews, Anindya Banerjee, Chinmay Bhargava and Runkai Tao), [ArXiv:2507.06294](https://arxiv.org/abs/2507.06294){:target="_blank"}.
-1. Mock Modularity Of Twisted Index In CHL Models, (With Nabamita Banerjee and Vedant Bhutra), [ArXiv:2505.17182](https://arxiv.org/abs/2505.17182){:target="_blank"}.
 1. Topological Twisting of 4d N=2 Supersymmetric Field Theories, (With Gregory W. Moore and Vivek Saxena), [ArXiv:2411.14396](https://arxiv.org/abs/2411.14396){:target="_blank"}.
-1. Rationality of Lorentzian Lattice CFTs And The Associated Modular Tensor Category, (with Madhav Sinha and Runkai Tao), [ArXiv:2408.02744](https://arxiv.org/abs/2408.02744){:target="_blank"}.
-1. Beauty And The Beast Part 2: Apprehending The Missing Supercurrent, (with Gregory Moore), [ArXiv:2309.02382](https://arxiv.org/abs/2309.02382){:target="_blank"}.
- 
+
 #### Journal Articles
 
+1. Mock Modularity Of Twisted Index In CHL Models, (With Nabamita Banerjee and Vedant Bhutra), [ArXiv:2505.17182](https://arxiv.org/abs/2505.17182){:target="_blank"}, **Journal of High Energy Physics**, 8, (2025), DOI: [10.1007/JHEP10(2025)008](https://doi.org/10.1007/JHEP10(2025)008){:target="_blank"}.
+1. Rationality of Lorentzian Lattice CFTs And The Associated Modular Tensor Category, (with Madhav Sinha and Runkai Tao), [ArXiv:2408.02744](https://arxiv.org/abs/2408.02744){:target="_blank"}, **Letters in Mathematical Physics**, 115, 134 (2025), DOI: [10.1007/s11005-025-02024-w](https://doi.org/10.1007/s11005-025-02024-w){:target="_blank"}.
+1. Beauty And The Beast Part 2: Apprehending The Missing Supercurrent, (with Gregory Moore), [ArXiv:2309.02382](https://arxiv.org/abs/2309.02382){:target="_blank"}, **Communications in Mathematical Physics**, 406, 303 (2025), DOI: [10.1007/s00220-025-05471-7](https://doi.org/10.1007/s00220-025-05471-7){:target="_blank"}.
 1. Mock Modularity In CHL Models, (with Ajit Bhand and Ashoke Sen), [ArXiv:2311.16252](https://arxiv.org/abs/2311.16252){:target="_blank"}, **Research in the Mathematical Sciences**, 12, 8 (2025), DOI: [10.1007/s40687-020-00237-0](https://doi.org/10.1007/s40687-024-00489-0){:target="_blank"}.
 1. Algebraic Structures In Closed Superstring Field Theory, Homotopy Transfer And Effective Actions, [ArXiv:2405.08063](https://arxiv.org/abs/2405.08063){:target="_blank"},  **Physical Review D**, 110, (2024), DOI: [PhysRevD.110.126007](https://doi.org/10.1103/PhysRevD.110.126007){:target="_blank"}.
 1. Generalisation of the Asai-Kaneko-Ninomiya identity to higher level, (with Ajit Bhand), **Journal of Mathematical Analysis and Applications**, 542, 02, (2024), DOI:[j.jmaa.2024.128849](https://doi.org/10.1016/j.jmaa.2024.128849){:target="_blank"}.
