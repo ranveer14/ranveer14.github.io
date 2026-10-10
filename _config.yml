@@ -118,7 +118,7 @@ navigation_header:
 - title: Notes
   url: /notes/
 - title: Philosophy
- url: /philosophy/         
+  url: /philosophy/      
 - title: Blog
   url: /blog/
 #- title: Contact
