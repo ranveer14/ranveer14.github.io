@@ -4,7 +4,7 @@ title: Publications And Talks
 excerpt: "Know about Ranveer's publications on this page."
 ---
 
-All of my publications are available on my Google Scholar [Profile](https://scholar.google.com/citations?user=dGsycjUAAAAJ&hl=en){:target="_blank"} and my Inspire [Profile](https://inspirehep.net/authors/1886897){:target="_blank"}.
+All of my publications are available on my [Google Scholar Profile](https://scholar.google.com/citations?user=dGsycjUAAAAJ&hl=en){:target="_blank"} and my [Inspire Profile](https://inspirehep.net/authors/1886897){:target="_blank"}.
 
 #### Talks 
 
