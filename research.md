@@ -1,6 +1,5 @@
 ---
 title: Research 
-feature_image: "../st.jpg"
 excerpt: "Know more about Ranveer's research on this page."
 aside: false
 ---
