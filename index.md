@@ -1,6 +1,6 @@
 ---
 title: Ranveer Kumar Singh
-feature_image: "ranveer.jpg"
+feature_image: "myphoto.jpg"
 excerpt: "Hi! This is Ranveer's Website. Navigate the page to know more about me."
 ---
 ### About me  
