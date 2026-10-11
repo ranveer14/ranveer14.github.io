@@ -2,8 +2,9 @@
 title: Ranveer Kumar Singh
 excerpt: "Hi! This is Ranveer's Website. Navigate the page to know more about me."
 ---
-<img src="/myphoto.jpg" alt="Ranveer Kumar Singh"
-     style="width: 250px; height: auto;">
+<img src="/myphoto.jpg"
+     alt="Ranveer Kumar Singh"
+     style="width: 100%; height: auto; display: block;">
 ### About me  
 
 * Hi! I am Ranveer Kumar Singh. I am a postdoctoral researcher at the [Bhaumik Institute for Theoretical Physics, UCLA](https://bhaumik-institute.physics.ucla.edu/){:target="_blank"}. My research interest is at the intersection of pure mathematics and theoretical high energy physics called by the name [Physical mathematics](https://www.physics.rutgers.edu/~gmoore/PhysicalMathematicsAndFuture.pdf){:target="_blank"}. I am also interested in number theory. To know more about my interests, go to [Research](https://ranveer14.github.io/research/){:target="_blank"}.
